@@ -354,6 +354,19 @@ a {
   color: #555;
 }
 
+.resource-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #111;
+  font-weight: 900;
+  text-decoration: none;
+  border-bottom: 2px solid #d3a52d;
+}
+
+.resource-card a:hover {
+  opacity: 0.65;
+}
+
 .resource-thumb {
   height: 150px;
   border-radius: 8px;
