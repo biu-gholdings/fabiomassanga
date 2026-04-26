@@ -682,3 +682,168 @@ img {
     font-size: clamp(2.6rem, 14vw, 4rem) !important;
   }
 }
+
+/* === HARD LAYOUT FIX: desktop + mobile === */
+
+:root {
+  --topbar-h: 72px;
+  --sidebar-w: 128px;
+  --page-max: 1180px;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background: #f4f4f6;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--topbar-h);
+  z-index: 1000;
+  background: #ffffff;
+}
+
+.sidebar {
+  position: fixed;
+  top: var(--topbar-h);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-w);
+  z-index: 900;
+  background: #f7f7f8;
+  border-right: 1px solid #e5e5e5;
+  overflow-y: auto;
+}
+
+.content {
+  margin-left: var(--sidebar-w) !important;
+  padding-top: var(--topbar-h) !important;
+  width: calc(100% - var(--sidebar-w)) !important;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.section,
+.hero-panel,
+.disclaimer,
+.footer {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 72px 56px;
+  box-sizing: border-box;
+}
+
+.hero-panel {
+  max-width: none;
+  min-height: 520px;
+}
+
+.card-grid,
+.resource-row,
+.image-library,
+.institution-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  width: 100%;
+}
+
+.institution-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.card,
+.resource-card,
+.institution-card,
+.image-tile {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.institution-card img,
+.section-logo img,
+.resource-thumb img,
+.image-tile img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Kill text clipping from sidebar overlap */
+h1,
+h2,
+h3,
+p {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Mobile/tablet */
+@media (max-width: 900px) {
+  :root {
+    --topbar-h: 88px;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding-top: var(--topbar-h) !important;
+  }
+
+  .topbar {
+    height: var(--topbar-h);
+  }
+
+  .brand {
+    padding-left: 24px;
+    font-size: 1rem;
+  }
+
+  .section,
+  .hero-panel,
+  .disclaimer,
+  .footer {
+    max-width: 100%;
+    padding: 48px 24px !important;
+  }
+
+  .hero-panel {
+    min-height: auto;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3rem, 14vw, 5rem);
+    line-height: 0.95;
+  }
+
+  .card-grid,
+  .resource-row,
+  .image-library,
+  .institution-grid,
+  .bio-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .institution-card,
+  .card,
+  .resource-card,
+  .image-tile {
+    width: 100% !important;
+  }
+}
+
