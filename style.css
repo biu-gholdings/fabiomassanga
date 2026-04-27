@@ -847,3 +847,118 @@ p {
   }
 }
 
+
+/* EMERGENCY LAYOUT FIX */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.content {
+  margin-left: 96px;
+  padding: 0;
+  max-width: none;
+}
+
+.section,
+.hero-panel,
+.disclaimer,
+.footer {
+  position: relative !important;
+  display: block !important;
+  clear: both !important;
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+  padding: 64px 48px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.section * ,
+.hero-panel * ,
+.footer * ,
+.disclaimer * {
+  position: relative !important;
+  transform: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.section::before,
+.section::after,
+.hero-panel::before,
+.hero-panel::after,
+.dark-banner::before,
+.dark-banner::after {
+  display: none !important;
+  content: none !important;
+}
+
+.resource-row,
+.image-library,
+.card-grid,
+.institution-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.resource-card,
+.image-tile,
+.card,
+.institution-card {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: hidden;
+}
+
+.resource-thumb,
+.image-tile img,
+.institution-card img,
+.profile-image-card img,
+.section-logo img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.dark-banner,
+.section-banner {
+  padding: 56px 48px !important;
+  margin-bottom: 48px !important;
+  min-height: auto !important;
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    display: none !important;
+  }
+
+  .content {
+    margin-left: 0 !important;
+  }
+
+  .section,
+  .hero-panel,
+  .disclaimer,
+  .footer {
+    padding: 44px 24px !important;
+  }
+
+  .resource-row,
+  .image-library,
+  .card-grid,
+  .institution-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
