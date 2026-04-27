@@ -156,6 +156,45 @@ a {
   padding: 20px 22px;
 }
 
+.page-banner {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f1115 0%, #1c1f26 70%);
+  color: white;
+  padding: 28px 40px;
+  height: auto;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.page-banner h1 {
+  opacity: 1;
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.page-banner + * {
+  margin-top: 20px;
+}
+
+.page-banner::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 120px;
+  background: linear-gradient(135deg, transparent 0%, #caa64a 100%);
+  opacity: 0.25;
+}
+
 .section-banner h2,
 .bio-banner h2,
 .section-hero h2 {
@@ -455,6 +494,14 @@ body.menu-open .mobile-menu-overlay {
   .bio-panel,
   .footer {
     border-radius: 10px;
+  }
+
+  .page-banner {
+    padding: 20px;
+  }
+
+  .page-banner h1 {
+    font-size: 26px;
   }
 }
 
