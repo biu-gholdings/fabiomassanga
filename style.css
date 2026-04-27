@@ -382,27 +382,51 @@ a {
   color: #6b6f79;
 }
 
-.footer {
-  margin-top: 22px;
-  background: #121315;
-  border-radius: 12px;
-  padding: 20px 22px;
-  color: #f4f4f4;
+.site-footer {
+  padding: 56px 40px 40px;
+  border-top: 1px solid #e6e6e6;
+  background: #f7f7f7;
 }
 
-.footer h2 {
-  margin: 0 0 10px;
-  font-size: 1rem;
-  letter-spacing: 0.12em;
+.footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
-.footer p {
-  margin: 4px 0;
-  color: rgba(255, 255, 255, 0.84);
+.site-footer h3 {
+  margin: 0 0 28px;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.footer a {
-  text-decoration: underline;
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 34px;
+}
+
+.footer-socials a {
+  font-size: 28px;
+  font-weight: 800;
+  color: #242424;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.footer-socials a:hover {
+  opacity: 0.65;
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a8a8a;
+  font-weight: 600;
 }
 
 .mobile-menu-toggle {
@@ -532,8 +556,7 @@ body.menu-open .mobile-menu-overlay {
   .section-banner,
   .bio-banner,
   .section-hero,
-  .bio-panel,
-  .footer {
+  .bio-panel {
     border-radius: 10px;
   }
 
@@ -555,6 +578,25 @@ body.menu-open .mobile-menu-overlay {
 
   .content {
     padding-bottom: calc(18px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 720px) {
+  .site-footer {
+    padding: 44px 24px 36px;
+  }
+
+  .site-footer h3 {
+    font-size: 22px;
+  }
+
+  .footer-socials a {
+    font-size: 22px;
+  }
+
+  .footer-copy {
+    font-size: 11px;
+    line-height: 1.6;
   }
 }
 
