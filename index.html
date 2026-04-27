@@ -11,7 +11,29 @@
 <body>
   <header class="topbar">
     <a href="#home" class="brand">FÁBIO G. MASSANGA</a>
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu-overlay">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <nav class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true">
+    <div class="mobile-menu-header">
+      <span class="mobile-menu-brand">FÁBIO G. MASSANGA</span>
+      <button class="mobile-menu-close" type="button" aria-label="Close navigation menu">&times;</button>
+    </div>
+    <a href="#biography">Biography</a>
+    <a href="#angola-first">Angola First</a>
+    <a href="#regulatory-alignment">Regulatory</a>
+    <a href="#cubeshackles">CubeShackles</a>
+    <a href="#cubecoin">CubeCoin</a>
+    <a href="#writing">Writing</a>
+    <a href="#media">Media</a>
+    <a href="#academy">BIU.G Academy</a>
+    <a href="https://biu-gholdings.org" target="_blank" rel="noopener noreferrer">Biu-g Holdings</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <aside class="sidebar">
     <a href="#biography"><span>●</span>Biography</a>
@@ -21,35 +43,19 @@
     <a href="#cubecoin"><span>◈</span>CubeCoin</a>
     <a href="#cubeshackles"><span>◆</span>CubeShackles</a>
     <a href="#system-guarantees"><span>⬢</span>Guarantees</a>
-    <a href="#transfer-lifecycle"><span>⬡</span>Lifecycle</a>
-    <a href="#wedge-lock"><span>⧉</span>Wedge Lock</a>
-    <a href="#infrastructure-thesis"><span>✶</span>Thesis</a>
     <a href="#academy"><span>✦</span>BIU.G Academy</a>
   </aside>
 
   <main class="content" id="home">
     <section class="hero-panel">
       <div class="hero-copy">
-        <h1>Fábio G. Massanga</h1>
-        <p>
-          Founder & CEO of CubeShackles — building sovereign financial infrastructure
-          for Africa, starting with Angola.
-        </p>
-        <p>
-          Focused on digital identity, payment rails, informal market digitization,
-          and regulator-aligned infrastructure.
-        </p>
+        <p class="hero-kicker">FÁBIO G. MASSANGA</p>
+        <p class="hero-role">Founder, CubeShackles</p>
+        <h1>Building Sovereign Financial Infrastructure for Angola</h1>
       </div>
-
-      <div class="hero-card">
-        <h3>Current Focus</h3>
-        <ul>
-          <li>Angola-first transaction wedge</li>
-          <li>Identity-linked payment flows</li>
-          <li>Informal merchant onboarding</li>
-          <li>Regulator-readable infrastructure</li>
-        </ul>
-      </div>
+      <figure class="hero-image">
+        <img src="assets/headshot.png" alt="Fábio G. Massanga portrait" />
+      </figure>
     </section>
 
     <section class="section" id="biography">
@@ -88,10 +94,10 @@
       <div class="resource-row">
         <article class="resource-card">
           <div class="resource-thumb">
-            <img src="assets/luanda-bay.png" alt="Luanda Bay infrastructure context" />
+            <img src="assets/headshot.png" alt="Fábio G. Massanga portrait" />
           </div>
           <h3>Angola Infrastructure Thesis</h3>
-          <p>Founder briefing • Coming soon</p>
+          <p>Founder briefing and infrastructure memo.</p>
         </article>
 
         <article class="resource-card">
@@ -99,7 +105,7 @@
             <img src="assets/portrait.png" alt="Fábio G. Massanga portrait" />
           </div>
           <h3>Informal Markets and Identity</h3>
-          <p>Local media • Coming soon</p>
+          <p>Local media coverage and market commentary.</p>
         </article>
 
         <article class="resource-card">
@@ -107,7 +113,7 @@
             <img src="assets/headshot.png" alt="Fábio G. Massanga headshot" />
           </div>
           <h3>Regulators as Co-Designers</h3>
-          <p>Public discussion • Coming soon</p>
+          <p>Public discussion on regulatory coordination.</p>
         </article>
       </div>
 
@@ -118,7 +124,7 @@
             <img src="assets/cubeshackles-logo.png" alt="CubeShackles logo" />
           </div>
           <h3>CubeShackles Launch Brief</h3>
-          <p>Coming soon</p>
+          <p>Launch brief and operating context.</p>
         </article>
 
         <article class="resource-card">
@@ -126,7 +132,7 @@
             <img src="assets/academy-logo.png" alt="BIU.G Academy logo" />
           </div>
           <h3>BIU.G Academy Education Layer</h3>
-          <p>Coming soon</p>
+          <p>Program scope and education rollout.</p>
         </article>
 
         <article class="resource-card">
@@ -134,7 +140,7 @@
             <img src="assets/luanda-bay.png" alt="Angola pilot environment visual" />
           </div>
           <h3>Angola Pilot Environment</h3>
-          <p>Coming soon</p>
+          <p>Pilot status and transaction environment notes.</p>
         </article>
       </div>
     </section>
@@ -227,31 +233,36 @@
         <article class="resource-card">
           <div class="resource-thumb">Paper</div>
           <h3>Informal Market Structure</h3>
-          <p>Coming soon.</p>
+          <p>Field notes and operating assumptions under compilation.</p>
         </article>
       </div>
     </section>
 
     <section class="section" id="cubeshackles">
-      <h2>CubeShackles</h2>
+      <div id="angola-first"></div>
+      <h2>Angola First</h2>
       <div class="section-logo">
         <img src="assets/cubeshackles-logo.png" alt="CubeShackles logo" />
       </div>
 
+      <p>Angola is the highest-leverage entry point: high transaction activity, low infrastructure coherence, and clear institutional need.</p>
+      <p>The timing is now because identity, payments, and compliance infrastructure can be coordinated into one operating layer instead of fragmented tools.</p>
+      <p>I am executing this directly through CubeShackles with a constrained wedge, measurable transaction flow, and regulator-readable outputs.</p>
+
       <div class="card-grid">
         <article class="card">
-          <h3>The Wedge</h3>
-          <p>Phone-number-based transactions, identity-linked flows, and informal merchant onboarding.</p>
+          <h3>Wedge</h3>
+          <p>Phone-number transactions with identity-linked flows for informal merchants and local businesses.</p>
         </article>
 
         <article class="card">
           <h3>System Design</h3>
-          <p>Identity, payments, compliance, and transaction visibility in one infrastructure layer.</p>
+          <p>Identity, payments, compliance visibility, and deterministic settlement in a single stack.</p>
         </article>
 
         <article class="card">
-          <h3>Proof of Work</h3>
-          <p>Core repositories, validator logic, explorer components, and transaction simulations.</p>
+          <h3>Proof</h3>
+          <p>Validator logic, transaction simulation, and explorer infrastructure under active execution.</p>
         </article>
       </div>
     </section>
@@ -316,177 +327,6 @@
       </ul>
     </section>
 
-    <section class="section" id="transfer-lifecycle">
-      <h2>Transfer Lifecycle</h2>
-
-      <h3>1. Initiation</h3>
-      <p>User initiates transaction via:</p>
-      <ul>
-        <li>Phone number</li>
-        <li>Identity-linked account</li>
-      </ul>
-
-      <h3>2. Validation Layer</h3>
-      <p>System checks:</p>
-      <ul>
-        <li>Identity validity</li>
-        <li>Balance availability</li>
-        <li>Transaction rules</li>
-      </ul>
-
-      <h3>3. Encoding into Cube</h3>
-      <p>Transaction is encoded as a "Cube":</p>
-      <ul>
-        <li>Contains sender, receiver, amount, timestamp</li>
-      </ul>
-
-      <h3>4. Shackle Linking</h3>
-      <p>Cube is attached to previous state via:</p>
-      <ul>
-        <li>Cryptographic linkage</li>
-        <li>Sequential integrity</li>
-      </ul>
-
-      <h3>5. Validator Processing</h3>
-      <p>Validators:</p>
-      <ul>
-        <li>Confirm validity</li>
-        <li>Broadcast state update</li>
-      </ul>
-
-      <h3>6. State Update</h3>
-      <p>Transaction enters:</p>
-      <ul>
-        <li>Pending -> Confirmed -> Settled</li>
-      </ul>
-
-      <h3>7. Institutional Visibility</h3>
-      <p>Data becomes accessible to:</p>
-      <ul>
-        <li>Regulators</li>
-        <li>Authorized institutions</li>
-      </ul>
-
-      <h3>8. Final Settlement</h3>
-      <p>Funds are recognized as:</p>
-      <ul>
-        <li>Completed</li>
-        <li>Auditable</li>
-        <li>Immutable</li>
-      </ul>
-    </section>
-
-    <section class="section" id="wedge-lock">
-      <h2>Wedge Lock</h2>
-
-      <h3>Defined Wedge</h3>
-      <p>Phone-number-based, identity-linked transactions for informal markets.</p>
-
-      <h3>Target Users</h3>
-      <ul>
-        <li>Informal merchants</li>
-        <li>Individuals without structured banking access</li>
-        <li>Small local businesses</li>
-      </ul>
-
-      <h3>Core Capabilities</h3>
-      <ul>
-        <li>Send/receive via phone number</li>
-        <li>Identity-linked transaction history</li>
-        <li>Real-time transaction visibility</li>
-        <li>Basic settlement tracking</li>
-      </ul>
-
-      <h3>What is NOT included</h3>
-      <ul>
-        <li>No DeFi</li>
-        <li>No speculation layers</li>
-        <li>No public token trading</li>
-        <li>No multi-country expansion</li>
-      </ul>
-
-      <h3>Success Criteria</h3>
-      <ul>
-        <li>Functional transaction loop (send -> confirm -> settle)</li>
-        <li>100-1,000 real user transactions</li>
-        <li>Institutional visibility demo ready</li>
-        <li>Regulator-readable data output</li>
-      </ul>
-
-      <h3>Lock Condition</h3>
-      <p>No expansion until:</p>
-      <ul>
-        <li>Wedge is fully operational</li>
-        <li>Transactions are stable</li>
-        <li>Data is verifiable</li>
-      </ul>
-
-      <h3>Failure Condition</h3>
-      <ul>
-        <li>Adding complexity before validation</li>
-        <li>Building features not used in wedge</li>
-        <li>Shifting focus away from core transaction loop</li>
-      </ul>
-    </section>
-
-    <section class="section" id="infrastructure-thesis">
-      <h2>Fábio G. Massanga — Infrastructure Thesis</h2>
-
-      <p>Founder & CEO of CubeShackles.</p>
-      <p>Building sovereign financial infrastructure for Africa, starting with Angola.</p>
-
-      <h3>Focus Areas</h3>
-      <ul>
-        <li>Digital Identity Infrastructure</li>
-        <li>Payment Rails</li>
-        <li>Informal Market Digitization</li>
-        <li>Regulator-Aligned Systems</li>
-      </ul>
-
-      <h3>CubeShackles</h3>
-      <p>A coordination layer that combines:</p>
-      <ul>
-        <li>Identity</li>
-        <li>Transactions</li>
-        <li>Compliance visibility</li>
-      </ul>
-      <p>Into a single system.</p>
-
-      <h3>Current Phase</h3>
-      <p>Wedge execution:</p>
-      <ul>
-        <li>Phone-number-based transactions</li>
-        <li>Identity-linked flows</li>
-        <li>Controlled pilot environment</li>
-      </ul>
-
-      <h3>Proof of Work</h3>
-      <p>Active development includes:</p>
-      <ul>
-        <li>Transaction simulation</li>
-        <li>Validator logic</li>
-        <li>Explorer systems</li>
-      </ul>
-
-      <h3>Positioning</h3>
-      <p>This is not:</p>
-      <ul>
-        <li>A speculative crypto system</li>
-        <li>A generic fintech product</li>
-      </ul>
-      <p>This is:</p>
-      <ul>
-        <li>Infrastructure designed to be understood by institutions</li>
-        <li>Built for real economic environments</li>
-      </ul>
-
-      <h3>Status</h3>
-      <p>Early-stage system under active development.</p>
-      <p>No public token exposure. Closed pilot design.</p>
-
-      <h3>Contact</h3>
-      <p>support@biu-gholdings.org</p>
-    </section>
 
     <section class="section" id="academy">
       <div class="dark-banner">
@@ -506,24 +346,24 @@
         <article class="resource-card">
           <div class="resource-thumb">Course</div>
           <h3>Financial Infrastructure for Angola</h3>
-          <p>BIU.G Academy • Coming soon</p>
+          <p>BIU.G Academy • Pilot curriculum in development.</p>
         </article>
 
         <article class="resource-card">
           <div class="resource-thumb">Course</div>
           <h3>Digital Identity and Payments</h3>
-          <p>BIU.G Academy • Coming soon</p>
+          <p>BIU.G Academy • Structured learning track in development.</p>
         </article>
 
         <article class="resource-card">
           <div class="resource-thumb">Course</div>
           <h3>CubeShackles Developer Basics</h3>
-          <p>BIU.G Academy • Coming soon</p>
+          <p>BIU.G Academy • Developer onboarding guide in development.</p>
         </article>
       </div>
     </section>
 
-    <section class="section writing">
+    <section class="section writing" id="writing">
       <h2>Writing</h2>
 
       <div class="card-grid">
@@ -550,16 +390,7 @@
         </p>
       </div>
 
-      <p class="lead">
-        CubeShackles is being designed to operate inside institutional boundaries,
-        not around them.
-      </p>
-
-      <p>
-        The objective is to build infrastructure that can be observed, audited,
-        and understood by institutions responsible for monetary policy, capital
-        markets, taxation, public finance, and economic supervision.
-      </p>
+      <p class="lead">Designed for institutional readability, supervisory compatibility, and operational trust.</p>
 
       <div class="institution-grid">
         <a class="institution-card" href="https://www.bna.ao/#/en" target="_blank" rel="noopener noreferrer">
@@ -615,5 +446,43 @@
       <p class="copyright">© 2026 Fábio Massanga. All rights reserved.</p>
     </footer>
   </main>
+  <script>
+    (function () {
+      var toggle = document.querySelector(".mobile-menu-toggle");
+      var menu = document.querySelector(".mobile-menu-overlay");
+      var closeBtn = document.querySelector(".mobile-menu-close");
+      if (!toggle || !menu || !closeBtn) return;
+
+      function closeMenu() {
+        document.body.classList.remove("menu-open");
+        toggle.setAttribute("aria-expanded", "false");
+        menu.setAttribute("aria-hidden", "true");
+      }
+
+      function openMenu() {
+        document.body.classList.add("menu-open");
+        toggle.setAttribute("aria-expanded", "true");
+        menu.setAttribute("aria-hidden", "false");
+      }
+
+      toggle.addEventListener("click", function () {
+        if (document.body.classList.contains("menu-open")) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      closeBtn.addEventListener("click", closeMenu);
+
+      menu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") closeMenu();
+      });
+    })();
+  </script>
 </body>
 </html>

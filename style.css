@@ -1068,3 +1068,194 @@ h1, h2, h3, h4, p, a, li, span, figcaption {
   background: #f5f5f7 !important;
   border-top: 1px solid #ddd;
 }
+
+/* Mobile institutional navigation and hierarchy */
+.mobile-menu-toggle {
+  display: none;
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #111;
+  margin: 5px 0;
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: #fff;
+  color: #111;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 22px 24px;
+  overflow-y: auto;
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.mobile-menu-brand {
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.mobile-menu-overlay a {
+  color: #111;
+  text-decoration: none;
+  font-size: 1.2rem;
+  line-height: 1.35;
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.mobile-menu-close {
+  background: transparent;
+  border: 0;
+  color: #111;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+body.menu-open {
+  overflow: hidden !important;
+}
+
+body.menu-open .mobile-menu-overlay {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .content {
+    margin-left: 0 !important;
+    width: 100% !important;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section,
+  .hero-panel,
+  .footer,
+  .disclaimer {
+    width: 100% !important;
+    min-width: 0;
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .hero-panel { order: 1; }
+  #biography { order: 2; }
+  #cubeshackles { order: 3; }
+  #regulatory-alignment { order: 4; }
+  #system-guarantees { order: 5; }
+  #media { order: 6; }
+  #writing { order: 7; }
+  #contact { order: 8; }
+
+  #images,
+  #transfer-lifecycle,
+  #wedge-lock,
+  #infrastructure-thesis,
+  .disclaimer {
+    display: none !important;
+  }
+
+  .resource-row,
+  .card-grid,
+  .image-library,
+  .institution-grid,
+  .bio-layout {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .image-tile {
+    height: auto !important;
+    background: #fff !important;
+  }
+
+  .image-tile img,
+  .profile-image-card img {
+    object-fit: contain !important;
+  }
+}
+
+/* Founder-first hero refinement */
+.hero-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px;
+  min-height: auto !important;
+}
+
+.hero-kicker {
+  margin: 0;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero-role {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hero-image {
+  margin: 0;
+  width: min(420px, 100%);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .hero-panel {
+    gap: 14px !important;
+  }
+
+  .hero-kicker {
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-role {
+    font-size: 0.95rem;
+  }
+}
