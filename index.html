@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fábio G. Massanga</title>
-<link rel="icon" type="image/png" sizes="32x32" href="assets/browser-icon.png">
-<link rel="apple-touch-icon" href="assets/browser-icon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/site-favicon.png">
+<link rel="apple-touch-icon" href="assets/site-favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -614,24 +614,24 @@
 
 <script>
   (function () {
-    var titleByHash = {
-      "#biography": "Fábio G. M.",
-      "#media": "Media",
-      "#images": "Images",
-      "#cubecoin": "CubeCoin",
-      "#academy": "BIU.G Academy",
-      "#cubeshackles": "CubeShackles"
+    const pageTitles = {
+      home: "Fábio G. M...",
+      biography: "Fábio G. M...",
+      media: "Media",
+      images: "Images",
+      cubecoin: "CubeCoin",
+      cubeshackles: "CubeShackles",
+      academy: "BIU.G Academy"
     };
 
-    function setTabTitle() {
-      var hash = window.location.hash || "#biography";
-      document.title = titleByHash[hash] || "Fábio G. M.";
+    function updateTabTitle() {
+      const hash = window.location.hash.replace("#", "").toLowerCase();
+      document.title = pageTitles[hash] || pageTitles.home;
     }
 
-    window.addEventListener("hashchange", setTabTitle);
-    setTabTitle();
+    window.addEventListener("hashchange", updateTabTitle);
+    updateTabTitle();
   })();
 </script>
-
 </body>
 </html>
