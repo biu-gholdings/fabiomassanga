@@ -1378,3 +1378,91 @@ body.menu-open .mobile-menu-overlay {
     height: 220px;
   }
 }
+
+/* HOMEPAGE HERO — INSTITUTIONAL SPLIT FIX */
+.hero {
+  min-height: 520px !important;
+  padding: 64px 72px !important;
+  display: grid !important;
+  grid-template-columns: 1.05fr 0.95fr !important;
+  align-items: center !important;
+  gap: 56px !important;
+  background:
+    linear-gradient(135deg, rgba(0,0,0,0.95), rgba(22,22,22,0.96) 55%, rgba(108,86,26,0.55)) !important;
+  overflow: hidden !important;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 4.8vw, 68px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.045em !important;
+  max-width: 760px !important;
+  margin: 18px 0 0 !important;
+  color: #fff !important;
+}
+
+.hero p {
+  max-width: 640px !important;
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+  color: rgba(255,255,255,0.88) !important;
+}
+
+.hero .eyebrow,
+.hero .role {
+  color: #d6bd63 !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+.hero-image,
+.hero figure {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+}
+
+.hero img,
+.hero .hero-image img,
+.hero figure img {
+  width: 100% !important;
+  max-width: 430px !important;
+  height: 360px !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border-radius: 10px !important;
+  border: 2px solid rgba(214,189,99,0.75) !important;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.45) !important;
+}
+
+/* MOBILE */
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto !important;
+    padding: 48px 28px 40px !important;
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 12vw, 58px) !important;
+  }
+
+  .hero p {
+    font-size: 17px !important;
+  }
+
+  .hero-image,
+  .hero figure {
+    justify-content: flex-start !important;
+  }
+
+  .hero img,
+  .hero .hero-image img,
+  .hero figure img {
+    max-width: 100% !important;
+    height: 360px !important;
+  }
+}
