@@ -667,3 +667,93 @@ body.menu-open .mobile-menu-overlay {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* HOME HERO — institutional desktop correction */
+.home-hero {
+  min-height: 560px !important;
+  height: 560px !important;
+  padding: 64px 72px !important;
+  display: grid !important;
+  grid-template-columns: 1fr 560px !important;
+  gap: 72px !important;
+  align-items: center !important;
+}
+
+.home-hero h1 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 42px !important;
+  line-height: 1.1 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 26px !important;
+}
+
+.home-hero .eyebrow {
+  font-size: 14px !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+  color: #d4af37 !important;
+}
+
+.home-hero .role {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #d8d8d8 !important;
+  margin-bottom: 30px !important;
+}
+
+.home-hero h2 {
+  font-size: 26px !important;
+  line-height: 1.22 !important;
+  font-weight: 800 !important;
+  margin-bottom: 26px !important;
+}
+
+.home-hero p {
+  max-width: 760px !important;
+  font-size: 18px !important;
+  line-height: 1.55 !important;
+  color: #d7d7d7 !important;
+}
+
+.hero-photo,
+.photo-placeholder {
+  width: 100% !important;
+  height: 310px !important;
+  border: 2px solid #c8a23a !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  background: #151515 !important;
+}
+
+.hero-photo img,
+.photo-placeholder img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+/* hide add photo placeholder text once image exists */
+.photo-placeholder span,
+.photo-placeholder svg {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    height: auto !important;
+    min-height: auto !important;
+    grid-template-columns: 1fr !important;
+    padding: 48px 28px !important;
+  }
+
+  .home-hero h1 {
+    font-size: 38px !important;
+  }
+
+  .hero-photo,
+  .photo-placeholder {
+    height: 360px !important;
+  }
+}
