@@ -67,7 +67,6 @@ a[target="_blank"]::after {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   padding: 26px 18px;
   display: flex;
-  flex-direction: column;
   gap: 8px;
   z-index: 40;
 }
@@ -173,7 +172,6 @@ a[target="_blank"]::after {
   padding: 20px 24px;
   min-height: 104px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
 }
 
@@ -392,7 +390,6 @@ a[target="_blank"]::after {
 .regulatory-links {
   margin-top: 28px;
   display: flex;
-  flex-direction: column;
   gap: 14px;
 }
 
@@ -474,7 +471,6 @@ a[target="_blank"]::after {
   z-index: 80;
   background: #ffffff;
   display: none;
-  flex-direction: column;
   padding: 16px 22px calc(18px + env(safe-area-inset-bottom));
   overflow-y: auto;
 }
