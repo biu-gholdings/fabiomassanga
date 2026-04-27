@@ -81,6 +81,13 @@
   .nav-item:hover { background: #f5f3ef; }
   .nav-item.active { color: #111; }
   .nav-item svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+  .nav-icon img {
+    width: 16px;
+    height: 16px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+  }
   .nav-item span {
     font-size: 11px;
     font-weight: 500;
@@ -439,6 +446,14 @@
     align-items: center;
     gap: 6px;
   }
+  .venture-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+  }
   .venture-card h4::after { content: '↗'; font-size: 12px; color: var(--gold); }
   .venture-card p { font-size: 13px; color: #666; line-height: 1.5; font-weight: 300; }
 
@@ -485,7 +500,7 @@
   </a>
   <a href="https://biugacademy.org" target="_blank" rel="noopener" class="nav-item">
     <span class="nav-icon">
-      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      <img src="assets/biug-academy-icon.png" alt="BIU.G icon">
     </span>
     BIU.G Academy <span class="ext-arrow">↗</span>
   </a>
@@ -559,7 +574,7 @@
         <p>Regulator-readable financial operating system providing payment visibility and compliance infrastructure for Angolan institutions.</p>
       </a>
       <a class="venture-card" href="#academy" id="academy">
-        <h4><span class="vc-dot" style="background:#2ecc71"></span>BIU.G Academy</h4>
+        <h4><img class="venture-icon" src="assets/biug-academy-icon.png" alt="BIU.G icon">BIU.G Academy</h4>
         <p>Financial literacy and sovereign economic empowerment platform serving Angola and the broader African continent.</p>
       </a>
     </div>
@@ -581,7 +596,7 @@
       </div>
       <div class="highlight-thumb">
         <div class="thumb-bg">
-          <img src="assets/academy-logo.png" alt="BIU.G Academy logo">
+          <img src="assets/biug-academy-icon.png" alt="BIU.G Academy logo">
         </div>
         <div class="thumb-label">BIU.G Academy Launch</div>
       </div>
