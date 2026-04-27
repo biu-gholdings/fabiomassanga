@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fábio Massanga</title>
   <meta name="description" content="Fábio G. Massanga — Founder and CEO of CubeShackles, building financial infrastructure for Africa, starting with Angola." />
+  <link rel="icon" type="image/png" href="assets/cubeshackles-logo.png">
+  <link rel="shortcut icon" type="image/png" href="assets/cubeshackles-logo.png">
+  <link rel="apple-touch-icon" href="assets/cubeshackles-logo.png">
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -492,6 +495,27 @@
         if (event.key === "Escape") closeMenu();
       });
     })();
+  </script>
+  <script>
+    const titles = {
+      home: "Fábio Massanga",
+      biography: "Biography",
+      media: "Media",
+      images: "Images",
+      "regulatory-alignment": "Regulatory",
+      cubecoin: "CubeCoin",
+      cubeshackles: "CubeShackles",
+      academy: "BIU.G Academy",
+      contact: "Contact"
+    };
+
+    function setPageTitle() {
+      const section = location.hash.replace("#", "") || "home";
+      document.title = titles[section] || "Fábio Massanga";
+    }
+
+    window.addEventListener("load", setPageTitle);
+    window.addEventListener("hashchange", setPageTitle);
   </script>
 </body>
 </html>
