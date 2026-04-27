@@ -13,8 +13,9 @@ body {
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
   color: #141414;
-  background: #f6f7f9;
+  background: #ffffff;
   line-height: 1.6;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 img {
@@ -91,25 +92,30 @@ a {
 .hero {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 36px;
+  gap: 30px;
   align-items: center;
-  min-height: 500px;
-  padding: 52px;
+  min-height: 340px;
+  padding: 38px 42px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #0b0b0c, #181818 64%, #4d3f19);
+  border: 1px solid #252833;
+  border-left: 4px solid #caa64a;
+  background: linear-gradient(135deg, #0f1115, #1c1f26 70%, #3a3321);
   color: #f4f4f4;
+  overflow: hidden;
 }
 
 .hero-copy h1 {
-  margin: 10px 0 14px;
-  font-size: clamp(1.8rem, 2.8vw, 2.5rem);
-  line-height: 1.2;
+  margin: 8px 0 12px;
+  font-size: clamp(1.6rem, 2.2vw, 2.05rem);
+  line-height: 1.26;
+  letter-spacing: -0.01em;
 }
 
 .hero-copy p {
   margin: 0 0 10px;
-  max-width: 640px;
+  max-width: 560px;
   color: rgba(255, 255, 255, 0.86);
+  font-size: 0.98rem;
 }
 
 .eyebrow {
@@ -122,23 +128,26 @@ a {
 }
 
 .role {
-  margin: 10px 0 0;
-  font-size: 1rem;
+  margin: 8px 0 0;
+  font-size: 0.92rem;
   font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .hero-image {
   margin: 0;
   width: 100%;
-  max-width: 420px;
+  max-width: 360px;
   justify-self: end;
 }
 
 .hero-image img {
   width: 100%;
   border-radius: 12px;
-  object-fit: contain;
+  max-height: 340px;
+  object-fit: cover;
   background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .section,
@@ -150,10 +159,29 @@ a {
 .section-banner,
 .bio-banner,
 .section-hero {
-  background: #111214;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f1115 0%, #1c1f26 72%);
   color: #f3f3f3;
   border-radius: 12px;
-  padding: 20px 22px;
+  padding: 20px 24px;
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-banner::after,
+.bio-banner::after,
+.section-hero::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 110px;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, #caa64a 100%);
+  opacity: 0.2;
 }
 
 .page-banner {
@@ -199,12 +227,17 @@ a {
 .bio-banner h2,
 .section-hero h2 {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: clamp(1.45rem, 2vw, 2.05rem);
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
 }
 
 .section-hero p {
   margin: 8px 0 0;
   color: rgba(255, 255, 255, 0.78);
+  position: relative;
+  z-index: 1;
 }
 
 .bio-panel {
@@ -221,6 +254,8 @@ a {
 
 .bio-copy p {
   margin-top: 0;
+  max-width: 72ch;
+  color: #2a2d35;
 }
 
 .bio-photo {
@@ -235,10 +270,11 @@ a {
 
 .section-label {
   margin: 18px 0 10px;
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   letter-spacing: 0.08em;
   color: #5a5c66;
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .media-row {
@@ -262,19 +298,20 @@ a {
 
 .media-card img {
   width: 100%;
-  height: 160px;
+  height: 142px;
   object-fit: cover;
 }
 
 .media-card h4 {
-  margin: 12px 12px 6px;
-  font-size: 1rem;
+  margin: 10px 12px 5px;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
 }
 
 .media-card p {
-  margin: 0 12px 14px;
+  margin: 0 12px 12px;
   color: #555861;
-  font-size: 0.93rem;
+  font-size: 0.9rem;
 }
 
 .image-library {
@@ -314,17 +351,19 @@ a {
 }
 
 .card {
-  padding: 14px;
+  padding: 15px 16px;
 }
 
 .card h3 {
   margin: 0 0 8px;
-  font-size: 1.02rem;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
 }
 
 .card p {
   margin: 0;
   color: #535761;
+  font-size: 0.92rem;
 }
 
 .section-logo {
@@ -392,14 +431,15 @@ a {
   background: #ffffff;
   display: none;
   flex-direction: column;
-  padding: 24px;
+  padding: 16px 22px calc(18px + env(safe-area-inset-bottom));
+  overflow-y: auto;
 }
 
 .mobile-menu-overlay a {
   border-bottom: 1px solid #e7e7ed;
   color: #151515;
-  padding: 16px 0;
-  font-size: 1.05rem;
+  padding: 14px 0;
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -416,6 +456,7 @@ a {
 
 body.menu-open {
   overflow: hidden;
+  touch-action: none;
 }
 
 body.menu-open .mobile-menu-overlay {
@@ -425,13 +466,13 @@ body.menu-open .mobile-menu-overlay {
 @media (max-width: 1000px) {
   .hero {
     grid-template-columns: 1fr;
-    padding: 34px 24px;
+    padding: 26px 20px;
     min-height: auto;
   }
 
   .hero-image {
     justify-self: start;
-    max-width: 360px;
+    max-width: 320px;
   }
 
   .bio-panel,
@@ -471,12 +512,12 @@ body.menu-open .mobile-menu-overlay {
 
   .hero {
     border-radius: 12px;
-    padding: 24px 16px;
+    padding: 22px 16px;
     gap: 18px;
   }
 
   .hero-copy h1 {
-    font-size: 1.5rem;
+    font-size: 1.38rem;
   }
 
   .hero-image {
@@ -484,7 +525,7 @@ body.menu-open .mobile-menu-overlay {
   }
 
   .hero-image img {
-    max-height: 420px;
+    max-height: 290px;
     object-fit: contain;
   }
 
@@ -498,10 +539,22 @@ body.menu-open .mobile-menu-overlay {
 
   .page-banner {
     padding: 20px;
+    min-height: 86px;
   }
 
   .page-banner h1 {
     font-size: 26px;
+  }
+
+  .section-banner,
+  .bio-banner,
+  .section-hero {
+    min-height: 86px;
+    padding: 16px 18px;
+  }
+
+  .content {
+    padding-bottom: calc(18px + env(safe-area-inset-bottom));
   }
 }
 
@@ -514,9 +567,9 @@ body.menu-open .mobile-menu-overlay {
 }
 
 .section-header-row h2 {
-  font-size: clamp(28px, 3vw, 42px);
+  font-size: clamp(22px, 2.2vw, 30px);
   margin: 0;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .section-link {
@@ -527,14 +580,14 @@ body.menu-open .mobile-menu-overlay {
 }
 
 .media-block {
-  padding: 42px 0;
+  padding: 24px 0 28px;
   border-bottom: 1px solid #e5e5e5;
 }
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(140px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  gap: 16px;
 }
 
 .photo-tile {
@@ -546,15 +599,32 @@ body.menu-open .mobile-menu-overlay {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #ddd;
 }
 
 .photo-tile figcaption {
-  margin-top: 10px;
-  font-size: 16px;
-  font-weight: 700;
+  margin-top: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
   color: #2b2b2b;
+}
+
+.institutional-note {
+  background: #fbfbfc;
+  border: 1px solid #eaecf1;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.institutional-note h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.institutional-note p {
+  margin: 0;
+  color: #434851;
 }
 
 @media (max-width: 900px) {
