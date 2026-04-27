@@ -962,3 +962,109 @@ body {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* INSTITUTIONAL CLEANUP */
+h1, h2, h3, h4, p, a, li, span, figcaption {
+  text-shadow: none !important;
+  filter: none !important;
+  -webkit-box-reflect: unset !important;
+}
+
+.section,
+.hero-panel,
+.dark-banner,
+.section-banner,
+.resource-card,
+.card,
+.institution-card,
+.image-tile {
+  box-shadow: none !important;
+}
+
+.dark-banner,
+.hero-panel {
+  background: linear-gradient(135deg, #111 0%, #1c1c1c 65%, #3a3120 100%) !important;
+  border: 1px solid #2a2a2a;
+  border-radius: 0;
+}
+
+.dark-banner h2,
+.hero-panel h1 {
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
+.dark-banner p,
+.hero-panel p {
+  color: #d8c178 !important;
+  max-width: 820px;
+}
+
+.section {
+  background: #fff !important;
+}
+
+.resource-card,
+.card,
+.institution-card {
+  background: #fff !important;
+  border: 1px solid #e2e2e2 !important;
+  padding: 22px !important;
+  border-radius: 4px !important;
+}
+
+.resource-thumb {
+  background: #171717 !important;
+  color: #c9a227 !important;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: .06em;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.resource-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resource-card h3,
+.card h3,
+.institution-card h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  color: #2d2d2d !important;
+}
+
+.resource-card p,
+.card p,
+.institution-card p,
+.section p {
+  color: #555 !important;
+  line-height: 1.55;
+}
+
+.section h2 {
+  color: #2d2d2d !important;
+  text-shadow: none !important;
+  margin-bottom: 32px;
+}
+
+.writing .card-grid,
+.resource-row,
+.card-grid,
+.institution-grid {
+  align-items: stretch !important;
+}
+
+.footer {
+  background: #f5f5f7 !important;
+  border-top: 1px solid #ddd;
+}
