@@ -258,7 +258,8 @@ a[target="_blank"]::after {
   align-items: start;
 }
 
-.bio-copy p {
+.bio-copy p,
+.bio-content p {
   margin-top: 0;
   max-width: 72ch;
   color: #2a2d35;
