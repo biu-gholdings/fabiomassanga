@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fábio G. Massanga</title>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -18,7 +18,7 @@
   }
 
   body {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: #f0eeea;
     color: #1a1a1a;
     min-height: 100vh;
@@ -63,24 +63,58 @@
   }
   .nav-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 5px;
-    padding: 10px 8px;
-    width: 90px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    width: 98px;
     border-radius: 8px;
     cursor: pointer;
     text-decoration: none;
     color: #444;
     transition: background 0.15s;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.2;
   }
   .nav-item:hover { background: #f5f3ef; }
   .nav-item.active { color: #111; }
-  .nav-item svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+  .nav-item svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.6; }
   .nav-item span {
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.02em;
+  }
+  .nav-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+  .dot-icon {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0.7;
+    flex-shrink: 0;
+  }
+  .diamond-icon {
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    border-radius: 2px;
+    background: currentColor;
+    opacity: 0.75;
+    flex-shrink: 0;
+  }
+  .ext-arrow {
+    margin-left: auto;
+    font-size: 10px;
+    opacity: 0.6;
   }
   .nav-item .icon-diamond {
     width: 18px; height: 18px;
@@ -148,7 +182,7 @@
     margin-bottom: 4px;
   }
 
-  .hero-subtitle {
+  .hero-role {
     font-size: 14px;
     font-weight: 500;
     color: rgba(255,255,255,0.65);
@@ -157,9 +191,9 @@
   }
 
   .hero-name {
-    font-family: 'EB Garamond', serif;
+    font-family: 'Inter', sans-serif;
     font-size: 52px;
-    font-weight: 600;
+    font-weight: 700;
     color: #fff;
     line-height: 1.1;
     margin-bottom: 24px;
@@ -175,7 +209,7 @@
     margin-bottom: 20px;
   }
 
-  .hero-bio {
+  .hero-bio-short {
     font-size: 15px;
     line-height: 1.72;
     color: rgba(255,255,255,0.82);
@@ -184,13 +218,13 @@
   }
 
   /* portrait */
-  .hero-portrait {
+  .hero-portrait-wrap {
     position: relative;
     z-index: 2;
     display: flex;
     justify-content: flex-end;
   }
-  .portrait-frame {
+  .portrait-box {
     width: 340px;
     height: 320px;
     border: 2px solid var(--gold);
@@ -201,6 +235,13 @@
     align-items: center;
     justify-content: center;
     position: relative;
+  }
+  .portrait-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 12%;
+    display: block;
   }
   .portrait-placeholder {
     width: 100%;
@@ -298,20 +339,33 @@
   }
   .inst-item {
     background: #fff;
-    padding: 18px 16px;
-    font-size: 13px;
-    font-weight: 500;
+    padding: 16px 12px;
+    font-size: 12px;
+    font-weight: 600;
     color: #222;
-    line-height: 1.4;
+    line-height: 1.35;
     display: flex;
-    align-items: flex-start;
-    gap: 6px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    min-height: 148px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .inst-item:hover { background: #faf8f2; }
+  .inst-item img {
+    width: 78px;
+    height: 78px;
+    object-fit: contain;
+    display: block;
   }
   .inst-item::after {
     content: '↗';
     font-size: 11px;
     color: var(--gold);
-    margin-top: 1px;
+    margin-top: -2px;
     flex-shrink: 0;
   }
 
@@ -347,6 +401,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  .thumb-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   /* ventures / links section */
@@ -400,28 +460,34 @@
 <!-- SIDEBAR -->
 <nav class="sidebar">
   <a href="#biography" class="nav-item active">
-    <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    <span>Biography</span>
+    <span class="nav-icon">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    </span>
+    Biography
   </a>
   <a href="#media" class="nav-item">
-    <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
-    <span>Media</span>
+    <span class="dot-icon"></span>
+    Media
   </a>
   <a href="#images" class="nav-item">
-    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-    <span>Images</span>
+    <span class="nav-icon">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+    </span>
+    Images
   </a>
   <a href="#cubecoin" class="nav-item">
     <div class="icon-diamond"></div>
     <span>CubeCoin</span>
   </a>
-  <a href="#cubeshackles" class="nav-item">
-    <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
-    <span>CubeShackles</span>
+  <a href="https://cubeshackles.com" target="_blank" rel="noopener" class="nav-item">
+    <span class="diamond-icon"></span>
+    CubeShackles <span class="ext-arrow">↗</span>
   </a>
-  <a href="#academy" class="nav-item">
-    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-    <span>BIU.G Academy</span>
+  <a href="https://biugacademy.org" target="_blank" rel="noopener" class="nav-item">
+    <span class="nav-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    </span>
+    BIU.G Academy <span class="ext-arrow">↗</span>
   </a>
 </nav>
 
@@ -432,19 +498,16 @@
   <section class="hero" id="biography">
     <div class="hero-text">
       <div class="hero-label">Fábio G. Massanga</div>
-      <div class="hero-subtitle">Founder and CEO, CubeShackles</div>
+      <div class="hero-role">Founder and CEO, CubeShackles</div>
       <h1 class="hero-name">Fábio G.<br>Massanga</h1>
       <h2 class="hero-tagline">Building Sovereign Financial<br>Infrastructure for Angola</h2>
-      <p class="hero-bio">
+      <p class="hero-bio-short">
         Institutional-grade financial infrastructure focused on identity-linked transactions, payment visibility, and regulator-readable operating systems. Fábio G. Massanga is the founder of CubeShackles and CubeCoin, and the creator of the BIU.G Academy — a platform dedicated to building financial literacy and sovereign economic empowerment across Angola and the African continent.
       </p>
     </div>
-    <div class="hero-portrait">
-      <div class="portrait-frame">
-        <div class="portrait-placeholder">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M3 21c0-5 4-9 9-9s9 4 9 9"/></svg>
-          <p>Add Photo</p>
-        </div>
+    <div class="hero-portrait-wrap">
+      <div class="portrait-box">
+        <img src="assets/portrait.png" alt="Fábio G. Massanga portrait">
         <div class="portrait-corner"></div>
       </div>
     </div>
@@ -466,10 +529,22 @@
     </p>
 
     <div class="institutions-grid">
-      <div class="inst-item">Banco Nacional de Angola (BNA)</div>
-      <div class="inst-item">Ministério das Finanças</div>
-      <div class="inst-item">Administração Geral Tributária (AGT)</div>
-      <div class="inst-item">Agência Angolana de Regulação e Supervisão de Seguros (ARSEG)</div>
+      <a class="inst-item" href="https://www.bna.ao/#/pt" target="_blank" rel="noopener">
+        <img src="assets/logos/bna.png" alt="Banco Nacional de Angola logo">
+        <span>Banco Nacional de Angola (BNA)</span>
+      </a>
+      <a class="inst-item" href="https://www.minfin.gov.ao/" target="_blank" rel="noopener">
+        <img src="assets/logos/minfin.png" alt="Ministério das Finanças logo">
+        <span>Ministério das Finanças</span>
+      </a>
+      <a class="inst-item" href="https://agt.minfin.gov.ao/PortalAGT/#!/" target="_blank" rel="noopener">
+        <img src="assets/logos/agt.png" alt="Administração Geral Tributária logo">
+        <span>Administração Geral Tributária (AGT)</span>
+      </a>
+      <a class="inst-item" href="https://cmc.ao/" target="_blank" rel="noopener">
+        <img src="assets/logos/cmc.png" alt="Comissão do Mercado de Capitais logo">
+        <span>Comissão do Mercado de Capitais (CMC)</span>
+      </a>
     </div>
 
     <!-- Ventures -->
@@ -493,32 +568,32 @@
     <div class="section-title" id="media">Media Highlights</div>
     <div class="highlights-row">
       <div class="highlight-thumb">
-        <div class="thumb-bg" style="background:linear-gradient(135deg,#1a2a1a,#2a4a2a)">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg>
+        <div class="thumb-bg">
+          <img src="assets/logos/minfin.png" alt="Ministério das Finanças logo">
         </div>
         <div class="thumb-label">Angola First Keynote</div>
       </div>
       <div class="highlight-thumb">
-        <div class="thumb-bg" style="background:linear-gradient(135deg,#1a1a2a,#2a2a4a)">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg>
+        <div class="thumb-bg">
+          <img src="assets/cubeshackles-logo.png" alt="CubeShackles logo">
         </div>
         <div class="thumb-label">CubeShackles Overview</div>
       </div>
       <div class="highlight-thumb">
-        <div class="thumb-bg" style="background:linear-gradient(135deg,#2a1a1a,#4a2a1a)">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg>
+        <div class="thumb-bg">
+          <img src="assets/academy-logo.png" alt="BIU.G Academy logo">
         </div>
         <div class="thumb-label">BIU.G Academy Launch</div>
       </div>
       <div class="highlight-thumb">
-        <div class="thumb-bg" style="background:linear-gradient(135deg,#1a2a2a,#1a3a3a)">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg>
+        <div class="thumb-bg">
+          <img src="assets/cmc-logo.png" alt="CMC logo">
         </div>
         <div class="thumb-label">CubeCoin Introduction</div>
       </div>
       <div class="highlight-thumb">
-        <div class="thumb-bg" style="background:linear-gradient(135deg,#2a2a1a,#3a3a1a)">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"><polygon points="5,3 19,12 5,21"/></svg>
+        <div class="thumb-bg">
+          <img src="assets/agt-logo.png" alt="AGT logo">
         </div>
         <div class="thumb-label">Sovereign Finance Forum</div>
       </div>
