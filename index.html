@@ -278,20 +278,20 @@
   }
 
   /* -- CONTENT SECTIONS -- */
-  .content-area {
+  .content-white {
     padding: 0 56px 56px 56px;
     background: #f0eeea;
   }
 
   /* Angola First card */
-  .highlight-card {
+  .angola-first {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: 28px 32px;
     margin-top: 32px;
   }
-  .highlight-card h3 {
+  .angola-first h3 {
     font-family: 'Barlow', sans-serif;
     font-size: 15px;
     font-weight: 700;
@@ -299,7 +299,7 @@
     margin-bottom: 10px;
     letter-spacing: 0.01em;
   }
-  .highlight-card p {
+  .angola-first p {
     font-size: 14.5px;
     line-height: 1.68;
     color: #444;
@@ -307,7 +307,7 @@
   }
 
   /* section header */
-  .section-title {
+  .sec-label {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 13px;
     font-weight: 700;
@@ -320,16 +320,27 @@
     border-bottom: 1px solid #ccc;
   }
 
-  .section-body {
+  .sec-body {
     font-size: 14.5px;
     line-height: 1.72;
     color: #444;
     font-weight: 300;
     margin-bottom: 24px;
   }
+  .sec-heading {
+    font-family: 'Barlow', sans-serif;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #111;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .section-block + .section-block {
+    margin-top: 36px;
+  }
 
   /* institution grid */
-  .institutions-grid {
+  .inst-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1px;
@@ -339,7 +350,7 @@
     overflow: hidden;
     margin-top: 8px;
   }
-  .inst-item {
+  .inst-cell {
     background: #fff;
     padding: 16px 12px;
     font-size: 12px;
@@ -356,14 +367,14 @@
     text-decoration: none;
     transition: background 0.15s ease;
   }
-  .inst-item:hover { background: #faf8f2; }
-  .inst-item img {
+  .inst-cell:hover { background: #faf8f2; }
+  .inst-cell img {
     width: 78px;
     height: 78px;
     object-fit: contain;
     display: block;
   }
-  .inst-item::after {
+  .inst-cell::after {
     content: '↗';
     font-size: 11px;
     color: var(--gold);
@@ -372,23 +383,20 @@
   }
 
   /* highlights / media row */
-  .highlights-row {
-    display: flex;
+  .hl-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    scrollbar-width: thin;
   }
-  .highlight-thumb {
-    flex: 0 0 200px;
-    height: 120px;
+  .hl-card {
+    min-height: 120px;
     background: #222;
     border-radius: 4px;
     overflow: hidden;
     position: relative;
     cursor: pointer;
   }
-  .thumb-label {
+  .hl-label {
     position: absolute;
     bottom: 0; left: 0; right: 0;
     padding: 8px 10px;
@@ -398,13 +406,13 @@
     color: #fff;
     letter-spacing: 0.03em;
   }
-  .thumb-bg {
+  .hl-bg {
     width: 100%; height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .thumb-bg img {
+  .hl-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -451,6 +459,92 @@
   }
   .venture-card h4::after { content: '↗'; font-size: 12px; color: var(--gold); }
   .venture-card p { font-size: 13px; color: #666; line-height: 1.5; font-weight: 300; }
+  .vc {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px 22px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+  .vc:hover {
+    border-color: var(--gold);
+    box-shadow: 0 2px 12px rgba(201,168,76,0.12);
+  }
+  .vc h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .vc h4::after { content: '↗'; font-size: 12px; color: var(--gold); }
+  .vc p { font-size: 13px; color: #666; line-height: 1.5; font-weight: 300; }
+
+  .bio-section {
+    margin-top: 36px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 28px 32px;
+  }
+  .bio-section h3 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    color: #111;
+    margin-bottom: 10px;
+  }
+  .bio-section p {
+    font-size: 14.5px;
+    line-height: 1.72;
+    color: #444;
+    font-weight: 300;
+  }
+  .hero-bottom-pad { height: 10px; }
+
+  @media (max-width: 1280px) {
+    .hl-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .inst-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero-card {
+      grid-template-columns: 1fr !important;
+      gap: 28px !important;
+      padding: 28px 24px !important;
+    }
+    .main {
+      margin-left: 0;
+    }
+    .sidebar {
+      position: static;
+      width: 100%;
+      height: auto;
+      border-right: 0;
+      border-bottom: 1px solid #e0ddd8;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px;
+    }
+    .content-white {
+      padding: 0 24px 32px 24px;
+    }
+    .ventures-grid {
+      grid-template-columns: 1fr;
+    }
+    .hl-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
 
   .vc-dot {
     width: 8px; height: 8px;
@@ -506,110 +600,130 @@
 <!-- MAIN -->
 <main class="main">
 
-  <!-- HERO -->
-  <section class="hero hero-card" id="biography">
-    <div class="hero-text">
-      <div class="hero-label">Fábio G. Massanga</div>
-      <div class="hero-role">Founder, CubeShackles &amp; Managing Member, Biu-g Holdings LLC</div>
-      <h1 class="hero-name">Fábio G. Massanga</h1>
-      <h2 class="hero-tagline">Building Sovereign Financial<br>Infrastructure for Angola</h2>
-      <p class="hero-bio-short">
-        Fábio G. Massanga is building institutional-grade financial infrastructure focused on identity-linked transactions, payment visibility, and regulator-readable systems.
-      </p>
-    </div>
-    <div class="hero-portrait-wrap">
-      <div class="portrait-box">
-        <img src="assets/portrait.png" alt="Fábio G. Massanga portrait">
-        <div class="portrait-corner"></div>
+  <div class="hero-wrap" id="biography">
+    <section class="hero hero-card">
+      <div class="hero-text">
+        <div class="hero-label">Fábio G. Massanga</div>
+        <div class="hero-role">Founder, CubeShackles &amp; Managing Member, Biu-g Holdings LLC</div>
+        <h1 class="hero-name">Fábio G. Massanga</h1>
+        <h2 class="hero-tagline">Building Sovereign Financial<br>Infrastructure for Angola</h2>
+        <p class="hero-bio-short">
+          Fábio G. Massanga is building institutional-grade financial infrastructure focused on identity-linked transactions, payment visibility, and regulator-readable systems.
+        </p>
       </div>
-    </div>
-  </section>
+      <div class="hero-portrait-wrap">
+        <div class="portrait-box">
+          <img src="assets/portrait.png" alt="Fábio G. Massanga portrait">
+          <div class="portrait-corner"></div>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <!-- CONTENT -->
-  <div class="content-area">
+  <div class="content-white">
 
     <!-- Angola First -->
-    <div class="highlight-card">
+    <div class="angola-first">
       <h3>Angola First</h3>
       <p>Deployment strategy begins in Angola through a controlled pilot framework, with measurable institutional alignment before regional expansion.</p>
     </div>
 
     <!-- Regulatory section -->
-    <div class="section-title" id="cubeshackles">Regulatory &amp; Institutional Alignment</div>
-    <p class="section-body">
-      CubeShackles is being designed in alignment with Angola's financial, tax, and regulatory institutions to ensure transparency, auditability, and national compliance from inception.
-    </p>
-
-    <div class="institutions-grid">
-      <a class="inst-item" href="https://www.bna.ao/#/pt" target="_blank" rel="noopener">
-        <img src="assets/logos/bna.png" alt="Banco Nacional de Angola logo">
-        <span>Banco Nacional de Angola (BNA)</span>
-      </a>
-      <a class="inst-item" href="https://www.minfin.gov.ao/" target="_blank" rel="noopener">
-        <img src="assets/logos/minfin.png" alt="Ministério das Finanças logo">
-        <span>Ministério das Finanças</span>
-      </a>
-      <a class="inst-item" href="https://agt.minfin.gov.ao/PortalAGT/#!/" target="_blank" rel="noopener">
-        <img src="assets/logos/agt.png" alt="Administração Geral Tributária logo">
-        <span>Administração Geral Tributária (AGT)</span>
-      </a>
-      <a class="inst-item" href="https://cmc.ao/" target="_blank" rel="noopener">
-        <img src="assets/logos/cmc.png" alt="Comissão do Mercado de Capitais logo">
-        <span>Comissão do Mercado de Capitais (CMC)</span>
-      </a>
-    </div>
+    <section class="section-block" id="cubeshackles">
+      <div class="sec-label">REGULATORY &amp; INSTITUTIONAL ALIGNMENT</div>
+      <h3 class="sec-heading">Built for transparent, regulator-readable financial operations.</h3>
+      <p class="sec-body">
+        CubeShackles is being designed in alignment with Angola's financial, tax, and regulatory institutions to ensure transparency, auditability, and national compliance from inception.
+      </p>
+      <div class="inst-grid">
+        <a class="inst-cell" href="https://www.bna.ao/#/pt" target="_blank" rel="noopener">
+          <img src="assets/logos/bna.png" alt="Banco Nacional de Angola logo">
+          <span>Banco Nacional de Angola (BNA)</span>
+        </a>
+        <a class="inst-cell" href="https://www.minfin.gov.ao/" target="_blank" rel="noopener">
+          <img src="assets/logos/minfin.png" alt="Ministério das Finanças logo">
+          <span>Ministério das Finanças</span>
+        </a>
+        <a class="inst-cell" href="https://agt.minfin.gov.ao/PortalAGT/#!/" target="_blank" rel="noopener">
+          <img src="assets/logos/agt.png" alt="Administração Geral Tributária logo">
+          <span>Administração Geral Tributária (AGT)</span>
+        </a>
+        <a class="inst-cell" href="https://cmc.ao/" target="_blank" rel="noopener">
+          <img src="assets/logos/cmc.png" alt="Comissão do Mercado de Capitais logo">
+          <span>Comissão do Mercado de Capitais (CMC)</span>
+        </a>
+      </div>
+    </section>
 
     <!-- Ventures -->
-    <div class="section-title">Ventures &amp; Platforms</div>
-    <div class="ventures-grid">
-      <a class="venture-card" href="#cubecoin" id="cubecoin">
+    <section class="section-block">
+      <div class="sec-label">VENTURES &amp; PLATFORMS</div>
+      <h3 class="sec-heading" id="cubecoin">Execution vehicles across infrastructure, assets, and education.</h3>
+      <div class="ventures-grid">
+        <a class="vc" href="#cubecoin">
         <h4><span class="vc-dot" style="background:var(--gold)"></span>CubeCoin</h4>
         <p>A sovereign digital asset designed for Angola's financial ecosystem, enabling identity-linked transactions at the institutional level.</p>
-      </a>
-      <a class="venture-card" href="#cubeshackles">
+        </a>
+        <a class="vc" href="#cubeshackles">
         <h4><img class="venture-icon" src="assets/cubeshackles-icon.png" alt="CubeShackles icon">CubeShackles</h4>
         <p>Regulator-readable financial operating system providing payment visibility and compliance infrastructure for Angolan institutions.</p>
-      </a>
-      <a class="venture-card" href="#academy" id="academy">
+        </a>
+        <a class="vc" href="#academy" id="academy">
         <h4><img class="venture-icon" src="assets/biug-academy-icon.png" alt="BIU.G icon">BIU.G Academy</h4>
         <p>Financial literacy and sovereign economic empowerment platform serving Angola and the broader African continent.</p>
-      </a>
-    </div>
+        </a>
+      </div>
+    </section>
 
     <!-- Media Highlights -->
-    <div class="section-title" id="media">Media Highlights</div>
-    <div class="highlights-row">
-      <div class="highlight-thumb">
-        <div class="thumb-bg">
+    <section class="section-block highlights-section" id="media">
+      <div class="sec-label">MEDIA HIGHLIGHTS</div>
+      <h3 class="sec-heading">Coverage, appearances, and institutional milestones.</h3>
+      <div class="hl-grid">
+        <div class="hl-card">
+          <div class="hl-bg">
           <img src="assets/logos/minfin.png" alt="Ministério das Finanças logo">
+          </div>
+          <div class="hl-label">Angola First Keynote</div>
         </div>
-        <div class="thumb-label">Angola First Keynote</div>
-      </div>
-      <div class="highlight-thumb">
-        <div class="thumb-bg">
+        <div class="hl-card">
+          <div class="hl-bg">
           <img src="assets/cubeshackles-icon.png" alt="CubeShackles logo">
+          </div>
+          <div class="hl-label">CubeShackles Overview</div>
         </div>
-        <div class="thumb-label">CubeShackles Overview</div>
-      </div>
-      <div class="highlight-thumb">
-        <div class="thumb-bg">
+        <div class="hl-card">
+          <div class="hl-bg">
           <img src="assets/biug-academy-icon.png" alt="BIU.G Academy logo">
+          </div>
+          <div class="hl-label">BIU.G Academy Launch</div>
         </div>
-        <div class="thumb-label">BIU.G Academy Launch</div>
-      </div>
-      <div class="highlight-thumb">
-        <div class="thumb-bg">
+        <div class="hl-card">
+          <div class="hl-bg">
           <img src="assets/cmc-logo.png" alt="CMC logo">
+          </div>
+          <div class="hl-label">CubeCoin Introduction</div>
         </div>
-        <div class="thumb-label">CubeCoin Introduction</div>
-      </div>
-      <div class="highlight-thumb">
-        <div class="thumb-bg">
+        <div class="hl-card" id="images">
+          <div class="hl-bg">
           <img src="assets/agt-logo.png" alt="AGT logo">
+          </div>
+          <div class="hl-label">Sovereign Finance Forum</div>
         </div>
-        <div class="thumb-label">Sovereign Finance Forum</div>
       </div>
-    </div>
+    </section>
+
+    <section class="bio-section">
+      <h3>Biography</h3>
+      <p>
+        Fábio G. Massanga is a founder and financial systems builder focused on sovereign infrastructure,
+        institutional trust, and transparent cross-border economics. Through CubeShackles, CubeCoin, and BIU.G Academy,
+        his work centers on identity-linked rails, policy-aligned financial architecture, and educational readiness for Angola-first deployment.
+      </p>
+    </section>
+
+    <div class="hero-bottom-pad"></div>
 
   </div>
 </main>
