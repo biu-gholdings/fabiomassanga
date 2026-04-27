@@ -33,16 +33,17 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <aside class="sidebar">
-    <a href="#biography"><span>●</span>Biography</a>
-    <a href="#media"><span>◉</span>Media</a>
-    <a href="#images"><span>▧</span>Images</a>
-    <a href="#cubecoin"><span>◈</span>CubeCoin</a>
-    <a href="https://cubeshackles.com" target="_blank" rel="noopener"><span>◆</span>CubeShackles</a>
-    <a href="https://biugacademy.org" target="_blank" rel="noopener"><span>✦</span>BIU.G Academy</a>
-  </aside>
+  <div class="layout">
+    <aside class="sidebar">
+      <a href="#biography"><span>●</span>Biography</a>
+      <a href="#media"><span>◉</span>Media</a>
+      <a href="#images"><span>▧</span>Images</a>
+      <a href="#cubecoin"><span>◈</span>CubeCoin</a>
+      <a href="https://cubeshackles.com" target="_blank" rel="noopener"><span>◆</span>CubeShackles</a>
+      <a href="https://biugacademy.org" target="_blank" rel="noopener"><span>✦</span>BIU.G Academy</a>
+    </aside>
 
-  <main class="content" id="home">
+    <main class="main-content" id="home">
     <section class="hero" id="hero">
       <div class="hero-copy">
         <p class="eyebrow">FÁBIO G. MASSANGA</p>
@@ -96,11 +97,11 @@
       </div>
     </section>
 
-    <section class="bio-page" id="biography">
-      <div class="bio-banner">
-        <h2>Biography</h2>
+      <section class="bio-page" id="biography">
+      <div class="page-banner">
+        <h1>Biography</h1>
       </div>
-      <div class="bio-panel">
+      <div class="bio-layout">
         <div class="bio-content">
           <p>
             FÁBIO G. MASSANGA is the Founder of CubeShackles and Managing Member of Biu-g Holdings LLC.
@@ -141,7 +142,7 @@
             across identity, compliance, payments, and public trust.
           </p>
         </div>
-        <figure class="bio-photo">
+        <figure class="bio-image">
           <img src="assets/headshot.png" alt="Fábio G. Massanga" />
         </figure>
       </div>
@@ -399,7 +400,8 @@
         </div>
       </div>
     </footer>
-  </main>
+    </main>
+  </div>
 
   <script>
     (function () {
@@ -440,6 +442,7 @@
 
   <script>
     const titles = {
+      home: "Fábio G. Massanga",
       biography: "Biography",
       media: "Media",
       images: "Images",
@@ -450,7 +453,7 @@
 
     function setPageTitle() {
       const section = location.hash.replace("#", "");
-      document.title = titles[section] || "Fábio G. Massanga";
+      document.title = titles[section] || titles.home;
     }
 
     window.addEventListener("load", setPageTitle);
