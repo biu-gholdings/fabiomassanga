@@ -9,712 +9,269 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --bg: #f5f4f1; --surface: #ffffff; --text: #121212; --muted: #555; --gold: #c8a84b; --border: #dcd9d3; --dark: #0f0f10; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+  a { color: inherit; text-decoration: none; }
 
-  :root { --gold: #c8a84b; --sw: 112px; --th: 48px; --dark: #111111; --darker: #0a0a0a; }
+  .page { max-width: 1180px; margin: 0 auto; padding: 32px 24px 64px; }
+  section { margin-top: 28px; }
+  h2 { font-size: 31px; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .section-sub { color: var(--muted); line-height: 1.65; max-width: 780px; }
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background: #f5f4f1;
-    color: #1a1a1a;
-    min-height: 100vh;
-  }
-
-  /* -- TOP BAR -- */
-  .top-bar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: var(--th);
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    z-index: 100;
-  }
-  .top-bar .site-name {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #111;
-  }
-
-  /* -- SIDEBAR -- */
-  .sidebar {
-    position: fixed;
-    top: var(--th);
-    left: 0;
-    width: var(--sw);
-    bottom: 0;
-    background: #fff;
-    border-right: 1px solid #e0ddd8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 24px;
-    gap: 6px;
-    z-index: 90;
-  }
-  .nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 8px;
-    padding: 9px 6px !important;
-    width: 100px;
-    border-radius: 8px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #444;
-    transition: background 0.15s;
-    font-size: 10.5px !important;
-    font-weight: 500;
-    line-height: 1.2;
-  }
-  .nav-item:hover { background: #f5f3ef; }
-  .nav-item.active { color: #111; }
-  .nav-item svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.6; }
-  .nav-icon img {
-    width: 16px;
-    height: 16px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-  }
-  .nav-item span {
-    font-size: 10.5px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-  }
-  .nav-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-  }
-  .dot-icon {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: currentColor;
-    opacity: 0.7;
-    flex-shrink: 0;
-  }
-  .diamond-icon {
-    width: 10px;
-    height: 10px;
-    transform: rotate(45deg);
-    border-radius: 2px;
-    background: currentColor;
-    opacity: 0.75;
-    flex-shrink: 0;
-  }
-  .ext-arrow {
-    margin-left: auto;
-    font-size: 10px;
-    opacity: 0.6;
-  }
-  .nav-item .icon-diamond {
-    width: 18px; height: 18px;
-    background: var(--gold);
-    transform: rotate(45deg);
-    border-radius: 2px;
-  }
-  .nav-item .icon-cross {
-    font-size: 18px;
-    font-weight: 300;
-    line-height: 1;
-  }
-
-  /* -- MAIN CONTENT -- */
-  .main {
-    margin-top: var(--th);
-    margin-left: var(--sw);
-    min-height: calc(100vh - var(--th));
-  }
-
-  /* -- HERO SECTION -- */
   .hero {
-    background: var(--darker);
-    background-image: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.13) 0%, transparent 60%);
-    padding: 56px;
+    margin-top: 0;
+    background: var(--dark);
+    border-radius: 10px;
+    border: 1px solid #1f1f1f;
+    border-left: 4px solid var(--gold);
+    padding: 44px;
     display: grid;
-    grid-template-columns: 1fr 460px;
-    gap: 48px;
+    grid-template-columns: 1fr 420px;
+    gap: 32px;
     align-items: center;
-    position: relative;
-    overflow: hidden;
   }
-  .hero-card { grid-template-columns: 1fr 460px !important; gap: 48px !important; }
+  .eyebrow { color: var(--gold); font-size: 12px; letter-spacing: 0.19em; font-weight: 600; text-transform: uppercase; display: inline-block; margin-bottom: 16px; }
+  .hero h1 { color: #fff; font-size: 45px; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 16px; }
+  .hero .sub { color: rgba(255,255,255,0.83); font-size: 17px; line-height: 1.65; max-width: 730px; }
+  .hero-image { border: 2px solid var(--gold); border-radius: 6px; overflow: hidden; background: #1b1b1b; min-height: 330px; }
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; display: block; }
 
-  /* gold accent bar on left */
-  .hero::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: linear-gradient(to bottom, var(--gold), transparent);
-  }
-
-  .hero-text { position: relative; z-index: 2; }
-
-  .hero-name {
-    font-family: 'Inter', sans-serif;
-    font-size: 44px !important;
-    font-weight: 700 !important;
-    color: #fff;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    letter-spacing: -0.01em;
+  .system, .regulatory, .components, .advantage, .highlights, .resources, .founder {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 30px 28px;
   }
 
-  .hero-bio p { font-size: 16px !important; line-height: 1.65 !important; color: rgba(255,255,255,0.82); font-weight: 300; margin-bottom: 14px; }
-  .hero-bio p:last-child { margin-bottom: 0; }
+  .grid-3 { margin-top: 18px; display: grid; gap: 14px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid-4 { margin-top: 18px; display: grid; gap: 10px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .grid-2 { margin-top: 18px; display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
-  /* portrait */
-  .hero-portrait-wrap {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .photo-frame {
-    width: 420px !important;
-    height: 340px !important;
-    border: 2px solid var(--gold);
-    border-radius: 4px;
-    overflow: hidden;
-    background: #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  .photo-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 12%;
-    display: block;
-  }
-  .portrait-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #1c1c1c 0%, #2a2a2a 50%, #1a1a1a 100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-  }
-  .portrait-placeholder svg {
-    width: 80px; height: 80px;
-    stroke: rgba(201,168,76,0.4);
-    fill: none;
-    stroke-width: 1;
-  }
-  .portrait-placeholder p {
-    font-size: 12px;
-    color: rgba(255,255,255,0.3);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-  /* -- CONTENT SECTIONS -- */
-  .content-white { padding: 0 56px 56px 56px; background: #f5f4f1; }
-
-  /* Angola First card */
-  .angola-first {
+  .card {
     background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 28px 32px;
-    margin-top: 32px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px;
+    line-height: 1.6;
+    color: #333;
   }
-  .angola-first h3 {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 10px;
-    letter-spacing: 0.01em;
-  }
-  .angola-first p {
-    font-size: 14.5px;
-    line-height: 1.68;
-    color: #444;
-    font-weight: 300;
-  }
+  .card h3 { color: #121212; font-size: 17px; margin-bottom: 7px; }
 
-  /* section header */
-  .sec-label {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #111;
-    margin-top: 44px;
-    margin-bottom: 12px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-
-  .sec-body {
-    font-size: 14.5px;
-    line-height: 1.72;
-    color: #444;
-    font-weight: 300;
-    margin-bottom: 24px;
-  }
-  .sec-heading {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 24px;
-    line-height: 1.25;
-    color: #111;
-    margin-bottom: 10px;
-    font-weight: 700;
-  }
-  .section-block + .section-block {
-    margin-top: 36px;
-  }
-
-  /* institution grid */
-  .inst-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: #ccc;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-top: 8px;
-  }
-  .inst-cell {
+  .angola .box {
     background: #fff;
-    padding: 16px 12px;
-    font-size: 12px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 24px;
+  }
+  .angola h3 { font-size: 24px; margin-bottom: 10px; }
+  .angola p, .regulatory p, .founder p { color: #444; line-height: 1.7; }
+
+  .reg-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    padding: 16px 14px;
+    font-size: 14px;
     font-weight: 600;
-    color: #222;
-    line-height: 1.35;
+    line-height: 1.45;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
     text-align: center;
-    min-height: 148px;
-    text-decoration: none;
-    transition: background 0.15s ease;
+    min-height: 108px;
+    transition: border-color 0.15s ease, background 0.15s ease;
   }
-  .inst-cell:hover { background: #faf8f2; }
-  .inst-cell img {
-    width: 78px;
-    height: 78px;
-    object-fit: contain;
+  .reg-card:hover { border-color: var(--gold); background: #fcf9f0; }
+
+  .highlight-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    padding: 18px;
     display: block;
   }
-  .inst-cell::after {
-    content: '↗';
-    font-size: 11px;
-    color: var(--gold);
-    margin-top: -2px;
-    flex-shrink: 0;
-  }
+  .highlight-card h3 { font-size: 18px; line-height: 1.35; margin-bottom: 8px; }
+  .highlight-card p { color: #4b4b4b; line-height: 1.65; margin-bottom: 11px; }
+  .highlight-card span { color: #8f7525; font-size: 13px; font-weight: 600; }
 
-  /* highlights / media row */
-  .hl-grid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 12px;
-  }
-  .hl-card {
-    min-height: 120px;
-    background: #222;
-    border-radius: 4px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-  }
-  .hl-label {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 8px 10px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.85));
-    font-size: 11px;
-    font-weight: 600;
-    color: #fff;
-    letter-spacing: 0.03em;
-  }
-  .hl-bg {
-    width: 100%; height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hl-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+  .resources .card { display: flex; align-items: center; justify-content: center; text-align: center; font-weight: 600; min-height: 100px; }
 
-  /* ventures / links section */
-  .ventures-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-top: 8px;
+  footer {
+    margin-top: 30px;
+    background: #101010;
+    color: #f5f5f5;
+    border-radius: 10px;
+    padding: 30px 26px;
+    border: 1px solid #252525;
   }
-  .venture-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 20px 22px;
-    transition: border-color 0.15s, box-shadow 0.15s;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-  }
-  .venture-card:hover {
-    border-color: var(--gold);
-    box-shadow: 0 2px 12px rgba(201,168,76,0.12);
-  }
-  .venture-card h4 {
-    font-size: 14px;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .venture-icon {
-    width: 14px;
-    height: 14px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-  }
-  .venture-card h4::after { content: '↗'; font-size: 12px; color: var(--gold); }
-  .venture-card p { font-size: 13px; color: #666; line-height: 1.5; font-weight: 300; }
-  .vc {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 20px 22px;
-    transition: border-color 0.15s, box-shadow 0.15s;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-  }
-  .vc:hover {
-    border-color: var(--gold);
-    box-shadow: 0 2px 12px rgba(201,168,76,0.12);
-  }
-  .vc h4 {
-    font-size: 14px;
-    font-weight: 700;
-    color: #111;
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .vc h4::after { content: '↗'; font-size: 12px; color: var(--gold); }
-  .vc p { font-size: 13px; color: #666; line-height: 1.5; font-weight: 300; }
+  footer h3 { letter-spacing: 0.18em; font-size: 15px; margin-bottom: 16px; }
+  .socials { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
+  .socials a { color: #f0f0f0; font-size: 14px; }
+  footer p { color: rgba(255,255,255,0.72); font-size: 12px; letter-spacing: 0.08em; }
 
-  .bio-section {
-    margin-top: 36px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 28px 32px;
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-image { max-width: 520px; }
+    .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
-  .bio-section h3 {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 20px;
-    color: #111;
-    margin-bottom: 10px;
-  }
-  .bio-section p {
-    font-size: 14.5px;
-    line-height: 1.72;
-    color: #444;
-    font-weight: 300;
-  }
-  .hero-bottom-pad { height: 10px; }
-  .site-footer {
-    margin-top: 36px;
-    border-top: 1px solid #d8d6d1;
-    padding-top: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    color: #444;
-    font-size: 12px;
-  }
-  .site-footer-links {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  .site-footer-links a { color: #444; text-decoration: none; }
-  .site-footer-links a:hover { color: #111; }
-
-  @media (max-width: 1280px) {
-    .hl-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    .inst-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 900px) {
-    .hero-card {
-      grid-template-columns: 1fr !important;
-      gap: 28px !important;
-      padding: 28px 24px !important;
-    }
-    .main {
-      margin-left: 0;
-    }
-    .sidebar {
-      position: static;
-      width: 100%;
-      height: auto;
-      border-right: 0;
-      border-bottom: 1px solid #e0ddd8;
-      flex-direction: row;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 10px;
-    }
-    .content-white {
-      padding: 0 24px 32px 24px;
-    }
-    .ventures-grid {
-      grid-template-columns: 1fr;
-    }
-    .hl-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .vc-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
+  @media (max-width: 760px) {
+    .page { padding: 18px 14px 34px; }
+    .hero { padding: 24px 18px; }
+    .hero h1 { font-size: 34px; }
+    .hero .sub { font-size: 15px; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    h2 { font-size: 28px; }
   }
 </style>
 </head>
 <body>
-
-<!-- TOP BAR -->
-<div class="top-bar">
-  <span class="site-name">Fábio G. Massanga</span>
-</div>
-
-<!-- SIDEBAR -->
-<nav class="sidebar">
-  <a href="#biography" class="nav-item active">
-    <span class="nav-icon">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-    </span>
-    Biography
-  </a>
-  <a href="#media" class="nav-item">
-    <span class="dot-icon"></span>
-    Media
-  </a>
-  <a href="#images" class="nav-item">
-    <span class="nav-icon">
-      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-    </span>
-    Images
-  </a>
-  <a href="#cubecoin" class="nav-item">
-    <div class="icon-diamond"></div>
-    <span>CubeCoin</span>
-  </a>
-  <a href="https://cubeshackles.com" target="_blank" rel="noopener" class="nav-item">
-    <span class="nav-icon">
-      <img src="assets/cubeshackles-icon.png" alt="CubeShackles icon">
-    </span>
-    CubeShackles <span class="ext-arrow">↗</span>
-  </a>
-  <a href="https://biugacademy.org" target="_blank" rel="noopener" class="nav-item">
-    <span class="nav-icon">
-      <img src="assets/biug-academy-icon.png" alt="BIU.G icon">
-    </span>
-    BIU.G Academy <span class="ext-arrow">↗</span>
-  </a>
-</nav>
-
-<!-- MAIN -->
-<main class="main">
-
-  <div class="hero-wrap" id="biography">
-    <section class="hero hero-card">
-      <div class="hero-text">
-        <h1 class="hero-name">Fábio G. Massanga</h1>
-        <div class="hero-bio">
-          <p>Fábio G. Massanga is the Founder of CubeShackles and Managing Member of Biu-g Holdings LLC. His work focuses on building sovereign financial infrastructure for Africa, beginning with Angola.</p>
-          <p>He was raised in Cabinda, Angola, where early exposure to telecommunications and banking systems shaped his understanding of how financial access is structured and where it breaks. He identified persistent infrastructure gaps across identity, payments, and institutional coordination.</p>
-          <p>Massanga attended Dom Paulino Madeca School and graduated from Instituto Privado Colégio Padre Builu with a concentration in Accounting and Management. He pursued higher education at Universidade Lusíadas de Angola and Faculdade de Administração &amp; Negócios while working full-time in Benfica, Luanda.</p>
-          <p>He relocated to the United States, where he developed a deeper understanding of labor markets, economic systems, and entrepreneurship. His current work centers on CubeShackles, an Angola-first infrastructure layer for identity-linked transactions, payment visibility, and regulator-readable financial systems.</p>
-        </div>
-      </div>
-      <div class="hero-portrait-wrap">
-        <div class="photo-frame">
-          <img src="assets/portrait.png" alt="Fábio G. Massanga portrait">
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- CONTENT -->
-  <div class="content-white">
-
-    <!-- Angola First -->
-    <div class="angola-first">
-      <h3>Angola First</h3>
-      <p>Deployment strategy begins in Angola through a controlled pilot framework, with measurable institutional alignment before regional expansion.</p>
+<main class="page">
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="eyebrow">FÁBIO G. MASSANGA — FOUNDER &amp; CEO</span>
+      <h1>Angola’s Financial Infrastructure Layer —<br>Built from First Principles</h1>
+      <p class="sub">Identity. Payments. Compliance. Unified into a single, regulator-readable system designed to operate across Angola’s formal and informal economy.</p>
     </div>
+    <div class="hero-image">
+      <img src="assets/portrait.png" alt="Fábio G. Massanga portrait">
+    </div>
+  </section>
 
-    <!-- Regulatory section -->
-    <section class="section-block" id="cubeshackles">
-      <div class="sec-label">REGULATORY &amp; INSTITUTIONAL ALIGNMENT</div>
-      <h3 class="sec-heading">Built for transparent, regulator-readable financial operations.</h3>
-      <p class="sec-body">
-        CubeShackles is being designed in alignment with Angola's financial, tax, and regulatory institutions to ensure transparency, auditability, and national compliance from inception.
-      </p>
-      <div class="inst-grid">
-        <a class="inst-cell" href="https://www.bna.ao/#/pt" target="_blank" rel="noopener">
-          <img src="assets/logos/bna.png" alt="Banco Nacional de Angola logo">
-          <span>Banco Nacional de Angola (BNA)</span>
-        </a>
-        <a class="inst-cell" href="https://www.minfin.gov.ao/" target="_blank" rel="noopener">
-          <img src="assets/logos/minfin.png" alt="Ministério das Finanças logo">
-          <span>Ministério das Finanças</span>
-        </a>
-        <a class="inst-cell" href="https://agt.minfin.gov.ao/PortalAGT/#!/" target="_blank" rel="noopener">
-          <img src="assets/logos/agt.png" alt="Administração Geral Tributária logo">
-          <span>Administração Geral Tributária (AGT)</span>
-        </a>
-        <a class="inst-cell" href="https://cmc.ao/" target="_blank" rel="noopener">
-          <img src="assets/logos/cmc.png" alt="Comissão do Mercado de Capitais logo">
-          <span>Comissão do Mercado de Capitais (CMC)</span>
-        </a>
+  <section class="system" id="system">
+    <h2>The System</h2>
+    <p class="section-sub">A unified infrastructure layer designed to coordinate identity, transactions, and regulatory visibility at the national level.</p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Identity Layer</h3>
+        <p>National identity-linked transaction system enabling verified participation across all financial interactions.</p>
       </div>
-    </section>
-
-    <!-- Ventures -->
-    <section class="section-block">
-      <div class="sec-label">VENTURES &amp; PLATFORMS</div>
-      <h3 class="sec-heading" id="cubecoin">Execution vehicles across infrastructure, assets, and education.</h3>
-      <div class="ventures-grid">
-        <a class="vc" href="#cubecoin">
-        <h4><span class="vc-dot" style="background:var(--gold)"></span>CubeCoin</h4>
-        <p>A sovereign digital asset designed for Angola's financial ecosystem, enabling identity-linked transactions at the institutional level.</p>
-        </a>
-        <a class="vc" href="#cubeshackles">
-        <h4><img class="venture-icon" src="assets/cubeshackles-icon.png" alt="CubeShackles icon">CubeShackles</h4>
-        <p>Regulator-readable financial operating system providing payment visibility and compliance infrastructure for Angolan institutions.</p>
-        </a>
-        <a class="vc" href="#academy" id="academy">
-        <h4><img class="venture-icon" src="assets/biug-academy-icon.png" alt="BIU.G icon">BIU.G Academy</h4>
-        <p>Financial literacy and sovereign economic empowerment platform serving Angola and the broader African continent.</p>
-        </a>
+      <div class="card">
+        <h3>Payment Layer</h3>
+        <p>Unified transaction rails supporting tokenized value, settlement systems, and real-time financial flows across markets.</p>
       </div>
-    </section>
-
-    <!-- Media Highlights -->
-    <section class="section-block highlights-section" id="media">
-      <div class="sec-label">MEDIA HIGHLIGHTS</div>
-      <h3 class="sec-heading">Coverage, appearances, and institutional milestones.</h3>
-      <div class="hl-grid">
-        <div class="hl-card">
-          <div class="hl-bg">
-          <img src="assets/logos/minfin.png" alt="Ministério das Finanças logo">
-          </div>
-          <div class="hl-label">Angola First Keynote</div>
-        </div>
-        <div class="hl-card">
-          <div class="hl-bg">
-          <img src="assets/cubeshackles-icon.png" alt="CubeShackles logo">
-          </div>
-          <div class="hl-label">CubeShackles Overview</div>
-        </div>
-        <div class="hl-card">
-          <div class="hl-bg">
-          <img src="assets/biug-academy-icon.png" alt="BIU.G Academy logo">
-          </div>
-          <div class="hl-label">BIU.G Academy Launch</div>
-        </div>
-        <div class="hl-card">
-          <div class="hl-bg">
-          <img src="assets/cmc-logo.png" alt="CMC logo">
-          </div>
-          <div class="hl-label">CubeCoin Introduction</div>
-        </div>
-        <div class="hl-card" id="images">
-          <div class="hl-bg">
-          <img src="assets/agt-logo.png" alt="AGT logo">
-          </div>
-          <div class="hl-label">Sovereign Finance Forum</div>
-        </div>
+      <div class="card">
+        <h3>Compliance Layer</h3>
+        <p>Built-in auditability and regulator-readable infrastructure enabling real-time oversight and institutional alignment.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="bio-section">
-      <h3>Biography</h3>
-      <p>
-        Fábio G. Massanga is a founder and financial systems builder focused on sovereign infrastructure,
-        institutional trust, and transparent cross-border economics. Through CubeShackles, CubeCoin, and BIU.G Academy,
-        his work centers on identity-linked rails, policy-aligned financial architecture, and educational readiness for Angola-first deployment.
-      </p>
-    </section>
+  <section class="angola" id="angola-first">
+    <div class="box">
+      <h3>Angola First</h3>
+      <p>Deployment begins in Angola through controlled institutional pilots, with measurable regulatory alignment before regional expansion.</p>
+    </div>
+  </section>
 
-    <footer class="site-footer">
-      <div>© 2026 Fábio G. Massanga. All rights reserved.</div>
-      <div class="site-footer-links">
-        <a href="#biography">Biography</a>
-        <a href="#media">Media</a>
-        <a href="#cubecoin">CubeCoin</a>
-        <a href="https://cubeshackles.com" target="_blank" rel="noopener">CubeShackles</a>
+  <section class="regulatory" id="regulatory">
+    <h2>Regulatory &amp; Institutional Alignment</h2>
+    <p>Engineered to operate within Angola’s financial and regulatory architecture from inception. Regulators are not external observers — they are system participants.</p>
+    <div class="grid-4">
+      <a href="https://www.bna.ao/#/pt" target="_blank" rel="noopener" class="reg-card">Banco Nacional de Angola (BNA)</a>
+      <a href="https://www.minfin.gov.ao/" target="_blank" rel="noopener" class="reg-card">Ministério das Finanças</a>
+      <a href="https://agt.minfin.gov.ao/PortalAGT/#!" target="_blank" rel="noopener" class="reg-card">Administração Geral Tributária (AGT)</a>
+      <a href="https://www.arseg.ao/" target="_blank" rel="noopener" class="reg-card">Agência Angolana de Regulação e Supervisão de Seguros (ARSEG)</a>
+    </div>
+  </section>
+
+  <section class="components" id="components">
+    <h2>System Components</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>CubeShackles</h3>
+        <p>Core financial infrastructure layer providing transaction visibility, identity linkage, and compliance coordination.</p>
       </div>
-    </footer>
+      <div class="card">
+        <h3>CubeCoin</h3>
+        <p>Sovereign digital monetary layer enabling programmable value exchange within Angola’s financial system.</p>
+      </div>
+      <div class="card">
+        <h3>BIU.G Academy</h3>
+        <p>Education and adoption engine designed to scale financial literacy and system participation across Angola and Africa.</p>
+      </div>
+    </div>
+  </section>
 
-    <div class="hero-bottom-pad"></div>
+  <section class="advantage" id="advantage">
+    <h2>Why This Works</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Dual-Economy Design</h3>
+        <p>Built to operate across both formal and informal markets simultaneously.</p>
+      </div>
+      <div class="card">
+        <h3>Regulator-Readable</h3>
+        <p>Every transaction layer is designed for visibility, auditability, and institutional trust.</p>
+      </div>
+      <div class="card">
+        <h3>Low-Connectivity Ready</h3>
+        <p>Designed for real-world conditions, including offline and constrained environments.</p>
+      </div>
+    </div>
+  </section>
 
-  </div>
+  <section class="highlights" id="highlights">
+    <h2>Highlights</h2>
+    <div class="grid-2">
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="highlight-card">
+        <h3>Why Angola Must Build Its Own Financial Layer</h3>
+        <p>A structural analysis of Angola’s financial system and the need for coordinated infrastructure.</p>
+        <span>Read on LinkedIn →</span>
+      </a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="highlight-card">
+        <h3>Digital Identity as the Control Layer of Angola’s Financial System</h3>
+        <p>Identity as the foundation for payments, compliance, and financial coordination.</p>
+        <span>Read on LinkedIn →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="resources" id="resources">
+    <h2>Resources</h2>
+    <div class="grid-3">
+      <div class="card">The Sovereign Finance Framework</div>
+      <div class="card">Digital Assets Framework</div>
+      <div class="card">CubeCoin &amp; The Angolan Economy</div>
+    </div>
+  </section>
+
+  <section class="founder" id="founder">
+    <h2>Founder</h2>
+    <p>Fábio G. Massanga is the Founder of CubeShackles and Managing Member of Biu-g Holdings LLC. His work focuses on building sovereign financial infrastructure for Africa, beginning with Angola.</p>
+  </section>
+
+  <footer id="footer">
+    <h3>FÁBIO G. MASSANGA</h3>
+    <div class="socials">
+      <a href="#">X</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+    </div>
+    <p>© 2026 COPYRIGHT FÁBIO G. MASSANGA. ALL RIGHTS RESERVED.</p>
+  </footer>
 </main>
 
 <script>
   (function () {
     const pageTitles = {
-      home: "Fábio G. M...",
-      biography: "Fábio G. M...",
-      media: "Media",
-      images: "Images",
-      cubecoin: "CubeCoin",
-      cubeshackles: "CubeShackles",
-      academy: "BIU.G Academy"
+      home: "Fábio G. Massanga",
+      system: "The System",
+      "angola-first": "Angola First",
+      regulatory: "Regulatory Alignment",
+      components: "System Components",
+      advantage: "Why This Works",
+      highlights: "Highlights",
+      resources: "Resources",
+      founder: "Founder",
+      footer: "Fábio G. Massanga"
     };
-
     function updateTabTitle() {
       const hash = window.location.hash.replace("#", "").toLowerCase();
       document.title = pageTitles[hash] || pageTitles.home;
     }
-
     window.addEventListener("hashchange", updateTabTitle);
     updateTabTitle();
   })();
