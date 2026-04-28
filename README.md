@@ -1,4 +1,4 @@
-# Fabio Massanga — Founder Platform
+# Fábio G. Massanga — Founder Platform
 
 This repository contains the source for `fabiomassanga.com`, including the public website and core system documentation.
 
