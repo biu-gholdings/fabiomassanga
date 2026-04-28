@@ -757,3 +757,126 @@ body.menu-open .mobile-menu-overlay {
     height: 360px !important;
   }
 }
+
+/* BUALABUITU TERMINAL ADD-ON */
+.authority-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  border-top: 1px solid #1f2937;
+  border-bottom: 1px solid #1f2937;
+  background: #080b12;
+}
+
+.authority-bar span {
+  padding: 14px 18px;
+  border-right: 1px solid #1f2937;
+  color: #c8a84b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.authority-bar span:last-child {
+  border-right: 0;
+}
+
+.live-signal {
+  background: #0b0f19;
+  color: #fff;
+}
+
+.section-head {
+  margin-bottom: 24px;
+}
+
+.section-head .eyebrow {
+  color: #c8a84b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-head h2 {
+  font-size: 26px;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.meta span {
+  border: 1px solid rgba(200,168,75,0.45);
+  color: #c8a84b;
+  padding: 4px 7px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.terminal-card strong {
+  display: inline-block;
+  margin-top: 14px;
+  color: #c8a84b;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+.brief-card {
+  min-width: 240px;
+  background: #101622;
+  border: 1px solid #243044;
+  border-radius: 8px;
+  padding: 18px;
+  color: #fff;
+}
+
+.brief-card span {
+  display: block;
+  color: #c8a84b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+
+.brief-card strong {
+  display: block;
+  font-size: 15px;
+  line-height: 1.35;
+  margin-bottom: 14px;
+}
+
+.brief-card small {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+@media (max-width: 800px) {
+  .authority-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .authority-bar span {
+    border-right: 0;
+    border-bottom: 1px solid #1f2937;
+  }
+}
+
+/* LIVE SIGNAL UPGRADE */
+.live-signal {
+  background: linear-gradient(180deg, #0b0f19 0%, #070a12 100%);
+  color: #fff;
+  border-top: 1px solid #1f2937;
+  border-bottom: 1px solid #1f2937;
+}
