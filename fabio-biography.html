@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    (function () {
+      var hash = (window.location.hash || "").toLowerCase();
+      var target = "biography.html";
+
+      if (hash === "#media" || hash === "#highlights") target = "media.html";
+      else if (hash === "#images" || hash === "#founder") target = "images.html";
+      else if (hash === "#cubecoin" || hash === "#components") target = "index.html#cubecoin";
+
+      window.location.replace(target);
+    })();
+  </script>
+  <meta http-equiv="refresh" content="0; url=biography.html">
+</head>
+<body>
+  <p>Redirecting to the updated biography page...</p>
+</body>
+</html>
