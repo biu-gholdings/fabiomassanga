@@ -18,6 +18,18 @@
   section { margin-top: 28px; }
   h2 { font-size: 31px; letter-spacing: -0.02em; margin-bottom: 10px; }
   .section-sub { color: var(--muted); line-height: 1.65; max-width: 780px; }
+  .top-nav { margin-bottom: 16px; display: flex; gap: 10px; }
+  .top-nav a {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+  .top-nav a:hover { border-color: var(--gold); color: #111; background: #fcf9f0; }
 
   .hero {
     margin-top: 0;
@@ -128,6 +140,11 @@
 </head>
 <body>
 <main class="page">
+  <nav class="top-nav" aria-label="Primary">
+    <a href="#home">Home</a>
+    <a href="biography.html">Biography</a>
+  </nav>
+
   <section class="hero" id="home">
     <div class="hero-content">
       <span class="eyebrow">FÁBIO G. MASSANGA — FOUNDER &amp; CEO</span>
