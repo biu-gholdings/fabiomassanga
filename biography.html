@@ -12,98 +12,49 @@
 :root{--gold:#c8a84b;--sw:112px;--th:48px;}
 body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-height:100vh;}
 
-.topbar{
-  position:fixed;top:0;left:0;right:0;height:var(--th);
-  background:#fff;border-bottom:1px solid #e2e0db;
-  display:flex;align-items:center;padding:0 22px;z-index:300;
-}
-.topbar-name{font-size:13px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:#111;}
+/* TOP BAR */
+.topbar{position:fixed;top:0;left:0;right:0;height:var(--th);background:#fff;border-bottom:1px solid #e2e0db;display:flex;align-items:center;padding:0 22px;z-index:300;}
+.topbar-name{font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#111;text-decoration:none;}
 
-.sidebar{
-  position:fixed;top:var(--th);left:0;width:var(--sw);bottom:0;
-  background:#fff;border-right:1px solid #e2e0db;
-  display:flex;flex-direction:column;align-items:center;
-  padding-top:20px;gap:2px;z-index:200;overflow-y:auto;
-}
-.ni{
-  display:flex;flex-direction:column;align-items:center;gap:4px;
-  width:88px;padding:9px 6px;border-radius:7px;
-  text-decoration:none;color:#555;transition:background .14s,color .14s;
-}
-.ni:hover{background:#f0eeea;color:#111;}
-.ni.active{color:#111;background:#f0eeea;}
-.ni svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;}
-.ni-label{font-size:10.5px;font-weight:500;text-align:center;line-height:1.3;}
-.ni-btc{
-  width:22px;height:22px;border-radius:50%;background:#f7931a;
-  display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:700;color:#fff;
-}
+/* SIDEBAR */
+.sidebar{position:fixed;top:var(--th);left:0;width:var(--sw);bottom:0;background:#fff;border-right:1px solid #e2e0db;display:flex;flex-direction:column;align-items:center;padding-top:20px;gap:2px;z-index:200;overflow-y:auto;}
+.ni{display:flex;flex-direction:column;align-items:center;gap:4px;width:88px;padding:9px 6px;border-radius:7px;text-decoration:none;color:#555;transition:background .14s,color .14s;cursor:pointer}
+.ni:hover{background:#f0eeea;color:#111}
+.ni.active{color:#111;background:#f0eeea}
+.ni svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7}
+.ni-label{font-size:10.5px;font-weight:500;letter-spacing:.01em;text-align:center;line-height:1.3}
+.ni-btc{width:22px;height:22px;border-radius:50%;background:#f7931a;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
 
+/* MAIN */
 .main{margin-top:var(--th);margin-left:var(--sw);}
 
-.banner{
-  background:#111;
-  min-height:160px;
-  display:flex;align-items:flex-end;
-  padding:0 60px 32px;
-  position:relative;
-  overflow:hidden;
-}
-.banner::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(108deg, #111 0%, #1a1a1a 45%, #111 100%);
-}
-.banner::after{
-  content:'';
-  position:absolute;right:-40px;top:0;bottom:0;width:420px;
-  background:repeating-linear-gradient(
-    -55deg,
-    transparent,
-    transparent 28px,
-    rgba(200,168,75,0.55) 28px,
-    rgba(200,168,75,0.55) 44px
-  );
-  clip-path:polygon(38% 0%, 100% 0%, 100% 100%, 18% 100%);
-}
-.banner-title{
-  font-size:42px;font-weight:700;color:#fff;
-  position:relative;z-index:2;letter-spacing:-.01em;
-}
+/* BANNER */
+.banner{background:#111;min-height:180px;display:flex;align-items:flex-end;padding:0 60px 36px;position:relative;overflow:hidden;}
+.banner::before{content:'';position:absolute;inset:0;background:linear-gradient(108deg,#111 0%,#1a1a1a 45%,#111 100%);}
+.banner::after{content:'';position:absolute;right:-40px;top:0;bottom:0;width:420px;background:repeating-linear-gradient(-55deg,transparent,transparent 28px,rgba(200,168,75,.55) 28px,rgba(200,168,75,.55) 44px);clip-path:polygon(38% 0%,100% 0%,100% 100%,18% 100%);}
+.banner-eyebrow{position:relative;z-index:2;font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.banner-title{position:relative;z-index:2;font-size:42px;font-weight:700;color:#fff;letter-spacing:-.01em;}
 
-.bio-wrap{
-  background:#fff;
-  padding:52px 60px 60px;
-  display:grid;
-  grid-template-columns:1fr 360px;
-  gap:64px;
-  align-items:start;
-}
-.bio-text p{
-  font-size:15.5px;line-height:1.80;color:#111;font-weight:300;
-  margin-bottom:20px;
-}
-.bio-text p:last-child{margin-bottom:0;}
-.bio-text a{color:#1a5fcc;text-decoration:underline;}
+/* BIO LAYOUT */
+.bio-wrap{background:#fff;padding:56px 60px 60px;display:grid;grid-template-columns:1fr 360px;gap:64px;align-items:start;}
+.biography-full h1{font-size:24px;font-weight:600;color:#111;letter-spacing:-.005em;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid #eceae6;}
+.biography-full p{font-size:15.5px;line-height:1.80;color:#222;font-weight:300;margin-bottom:20px;max-width:760px;}
+.biography-full p:last-child{margin-bottom:0;}
+.biography-full strong{font-weight:600;color:#111;}
+.biography-full a{color:#1a5fcc;text-decoration:underline;text-underline-offset:2px;}
+.biography-full a:hover{color:#0d3d8a;}
 
 .bio-portrait{position:sticky;top:80px;}
-.bio-portrait img{
-  width:100%;height:auto;
-  display:block;
-  border-radius:4px;
-  box-shadow:0 4px 32px rgba(0,0,0,0.15);
-}
+.bio-portrait img{width:100%;height:auto;display:block;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.15);}
+.bio-portrait-cap{margin-top:14px;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#888;text-align:center;}
 
-.disclaimer{
-  background:#f7f6f3;padding:40px 60px;
-  border-top:1px solid #e2e0db;
-}
-.disclaimer p{
-  font-size:13.5px;line-height:1.75;color:#333;
-  margin-bottom:14px;max-width:920px;
-}
-.disclaimer p strong{font-weight:700;color:#111;}
+/* DISCLAIMER */
+.disclaimer{background:#f7f6f3;padding:40px 60px;border-top:1px solid #e2e0db;}
+.disclaimer p{font-size:13.5px;line-height:1.75;color:#444;font-weight:300;margin-bottom:14px;max-width:920px;}
+.disclaimer p:last-child{margin-bottom:0;}
+.disclaimer p strong{font-weight:600;color:#111;}
 
+/* FOOTER */
 .footer{background:#fff;padding:40px 60px;border-top:1px solid #e2e0db;}
 .footer-name{font-size:14px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#111;margin-bottom:22px;}
 .socials{display:flex;gap:22px;margin-bottom:22px;}
@@ -111,11 +62,26 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 .socials a:hover{color:var(--gold);}
 .socials svg{width:28px;height:28px;fill:currentColor;}
 .copy{font-size:11.5px;color:#aaa;letter-spacing:.05em;text-transform:uppercase;}
+
+/* RESPONSIVE */
+@media (max-width:1080px){
+  .banner{padding:0 28px 28px;min-height:140px;}
+  .banner-title{font-size:32px;}
+  .bio-wrap{grid-template-columns:1fr;padding:36px 28px 40px;gap:36px;}
+  .bio-portrait{position:static;max-width:360px;}
+  .disclaimer,.footer{padding:32px 28px;}
+}
+@media (max-width:820px){
+  :root{--sw:86px;}
+}
 </style>
 </head>
 <body>
+
+<!-- TOP BAR -->
 <div class="topbar"><a href="index.html" class="topbar-name">Fábio G. Massanga</a></div>
 
+<!-- SIDEBAR -->
 <nav class="sidebar">
   <a href="biography.html" class="ni active">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
@@ -145,59 +111,58 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 
 <main class="main">
   <div class="banner">
-    <h1 class="banner-title">Biography</h1>
+    <div>
+      <div class="banner-eyebrow">Profile</div>
+      <h1 class="banner-title">Biography</h1>
+    </div>
   </div>
 
   <div class="bio-wrap">
-    <div class="bio-text">
-      <p>Fábio G. Massanga is an Angolan entrepreneur, infrastructure architect, and financial systems builder. He is the Founder of <a href="https://cubeshackles.com" target="_blank" rel="noopener">CubeShackles</a> and Managing Member of Biu-g Holdings LLC, focused on building sovereign financial infrastructure for Africa, beginning with Angola.</p>
-      <p>He was born and raised in Cabinda, Angola, in a middle-class household, where early exposure to the country's telecommunications and banking sectors shaped his understanding of how financial access is structured-and where it breaks. Despite visible progress in Angola's financial and telecom industries, he identified persistent infrastructure gaps across identity verification, payment visibility, and institutional coordination that no existing system was addressing.</p>
-      <p>Massanga attended Dom Paulino Madeca School, where he distinguished himself academically and athletically, winning a junior tennis competition sponsored by Chevron-demonstrating early discipline and competitive focus. He later graduated from Instituto Privado Colegio Padre Builu with a concentration in Accounting and Management, laying the foundation for his analytical approach to business and finance.</p>
-      <p>He pursued higher education in Luanda at two institutions simultaneously: Universidade Lusiadas de Angola, where he studied Foreign Affairs, and Faculdade de Administracao &amp; Negocios, where he focused on Marketing and Management. During this demanding period, he worked full-time in the service sector in Benfica, Luanda, financing his own education and developing the resilience that would define his entrepreneurial path.</p>
-      <p>He ultimately left university and relocated to the United States, where he began developing a deeper understanding of labor markets, economic systems, capital formation, and entrepreneurship through direct exposure and practical experience in one of the world's most competitive business environments.</p>
-      <p>His current work centers on <a href="https://cubeshackles.com" target="_blank" rel="noopener">CubeShackles</a>-an Angola-first financial infrastructure layer designed to enable identity-linked transactions, payment visibility, informal market digitization, and regulator-readable operating systems. CubeShackles is being designed in alignment with Angola's central financial and regulatory institutions, including the Banco Nacional de Angola (BNA), Ministerio das Financas, Administracao Geral Tributaria (AGT), Agencia Angolana de Regulacao e Supervisao de Seguros (ARSEG), and the Comissao do Mercado de Capitais (CMC).</p>
-      <p>His thesis is that Africa's financial access challenge is not solely a banking issue, but a structural infrastructure problem requiring coordinated systems across identity, compliance, payments, and public trust. CubeShackles addresses this by building the connective layer that institutions, businesses, and citizens can rely on - regulator-readable, identity-anchored, and designed for Angola's operational reality from day one.</p>
-      <p>In parallel, Massanga founded the <a href="https://biugacademy.org" target="_blank" rel="noopener">BIU.G Academy</a>, a financial literacy and sovereign economic empowerment platform serving Angola and the broader African continent - providing the educational foundation that complements his infrastructure work.</p>
-      <p>He posts his views on LinkedIn and his work is documented at <a href="https://cubeshackles.com" target="_blank" rel="noopener">CubeShackles.com</a> and <a href="https://biugacademy.org" target="_blank" rel="noopener">BIUGAcademy.org</a>.</p>
-    </div>
+    <section class="biography-full">
 
-    <div class="bio-portrait">
+      <h1>Full Biography</h1>
+
+      <p><strong>Fábio G. Massanga</strong> is an Angolan entrepreneur, infrastructure architect, and financial systems builder. He is the Founder of CubeShackles and Managing Member of Biu-g Holdings LLC, focused on building sovereign financial infrastructure for Africa, beginning with Angola.</p>
+
+      <p>He was born and raised in Cabinda, Angola, in a middle-class household, where early exposure to the country’s telecommunications and banking sectors shaped his understanding of how financial access is structured—and where it breaks. Despite progress across Angola’s financial and telecom industries, he identified persistent infrastructure gaps in identity verification, payment visibility, and institutional coordination.</p>
+
+      <p>Massanga attended Dom Paulino Madeca School, where he demonstrated early discipline and competitive focus, winning a junior tennis competition sponsored by Chevron. He later graduated from Instituto Privado Colégio Padre Builu with a concentration in Accounting and Management, forming the foundation of his analytical approach to business and finance.</p>
+
+      <p>He pursued higher education in Luanda across two institutions: <strong>Universidade Lusíadas de Angola</strong>, where he studied International Relations (Foreign Affairs), and <strong>Faculdade de Administração e Negócios</strong>, where he focused on Marketing and Management. During this period, he worked full-time in the service sector in Benfica, Luanda, supporting himself while continuing his academic path.</p>
+
+      <p>He later relocated to the United States, where he developed a deeper understanding of labor markets, economic systems, capital formation, and entrepreneurship through direct exposure and practical experience.</p>
+
+      <p>His current work centers on <strong>CubeShackles</strong>—an Angola-first financial infrastructure layer designed to enable identity-linked transactions, payment visibility, informal market digitization, and regulator-readable operating systems. The platform is being designed in alignment with Angola’s core financial and regulatory institutions, including the Banco Nacional de Angola (BNA), Ministério das Finanças, Administração Geral Tributária (AGT), Agência Angolana de Regulação e Supervisão de Seguros (ARSEG), and the Comissão do Mercado de Capitais (CMC).</p>
+
+      <p>His core thesis is that Africa’s financial access challenge is not solely a banking issue, but a structural infrastructure problem requiring coordinated systems across identity, compliance, payments, and public trust. CubeShackles addresses this by building a regulator-readable, identity-anchored financial layer designed for Angola’s operational reality from inception.</p>
+
+      <p>In parallel, he founded <strong>BIU.G Academy</strong>, a financial literacy and sovereign economic empowerment platform serving Angola and the broader African continent, providing the educational foundation that complements his infrastructure work.</p>
+
+      <p>He publishes his views on LinkedIn, and his work is documented at <a href="https://cubeshackles.com" target="_blank" rel="noopener">CubeShackles.com</a> and <a href="https://biugacademy.org" target="_blank" rel="noopener">BIUGAcademy.org</a>.</p>
+
+    </section>
+
+    <aside class="bio-portrait">
       <img src="assets/headshot.png" alt="Fábio G. Massanga">
-    </div>
+      <div class="bio-portrait-cap">Fábio G. Massanga</div>
+    </aside>
   </div>
 
   <div class="disclaimer">
-    <p>Many financial scams are fraudulently perpetuated in the name of legitimate companies or well-known figures. I do not conduct or sponsor any giveaways of cryptocurrencies. <strong>I will NEVER ask you to send cryptocurrency (or to provide your private crypto-related information) so you can receive cryptocurrency in return.</strong> I encourage all individuals to educate themselves on financial scams and how to identify them.</p>
-    <p>Any views and opinions expressed are my own or those of the authors of the content shared, and may not necessarily reflect the policy or position of CubeShackles or its affiliates. Any models or forecasts contained or referenced in the content on this website are not models or forecasts of CubeShackles or of any such other entity. The appearance of content on this website does not constitute an endorsement by CubeShackles or any such other entity of such content. I do not make any representation or warranty with respect to the accuracy, applicability, or completeness of the content shared on this website. The content shared on this website is for informational purposes only and does not constitute an offering of any financial instrument or legal, tax, financial, investment or other advice or recommendation. You should consult your own professional advisors for advice. Some of the content may contain forward-looking information that is inherently unknowable. Past performance may not be indicative of future results.</p>
+    <p>Many financial scams are fraudulently perpetuated in the name of legitimate companies or well-known figures. <strong>I will never ask you to send cryptocurrency or private wallet information in exchange for promised returns.</strong></p>
+    <p>Any views expressed on this website are for informational purposes only and do not constitute legal, tax, investment, or financial advice.</p>
   </div>
 
   <div class="footer">
     <div class="footer-name">Fábio G. Massanga</div>
     <div class="socials">
-      <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63z"/></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455zM5.337 7.433a2.062 2.062 0 110-4.124 2.062 2.062 0 010 4.124zM7.119 20.452H3.555V9h3.564z"/></svg></a>
       <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-      <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
     </div>
     <div class="copy">© 2026 Copyright Fábio G. Massanga. All Rights Reserved.</div>
   </div>
 </main>
 
-<script>
-  (function () {
-    const pageTitles = {
-      biography: "Fábio G. Massanga — Biography",
-      media: "Fábio G. Massanga — Media",
-      images: "Fábio G. Massanga — Images",
-      cubecoin: "Fábio G. Massanga — CubeCoin"
-    };
-    function updateTabTitle() {
-      const hash = window.location.hash.replace("#", "").toLowerCase() || "biography";
-      document.title = pageTitles[hash] || pageTitles.biography;
-    }
-    window.addEventListener("hashchange", updateTabTitle);
-    updateTabTitle();
-  })();
-</script>
 </body>
 </html>
