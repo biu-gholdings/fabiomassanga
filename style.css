@@ -457,7 +457,7 @@ body {
   padding: 54px 68px;
   color: #fff;
   background:
-    radial-gradient(circle at 82% 40%, rgba(212,167,44,.22), transparent 38%),
+    radial-gradient(circle at 82% 40%, rgba(212,167,44,.18), transparent 42%),
     linear-gradient(120deg, #050505 0%, #090909 58%, #0b0b0b 100%);
   border-bottom: 1px solid #e7e2d8;
   display: grid;
@@ -473,19 +473,19 @@ body {
   position: absolute;
   inset: 0;
   background:
-    repeating-linear-gradient(90deg, rgba(212,167,44,.14) 0 1px, transparent 1px 58px),
-    repeating-linear-gradient(0deg, rgba(212,167,44,.11) 0 1px, transparent 1px 58px),
-    radial-gradient(circle at 15% 65%, rgba(212,167,44,.22), transparent 35%);
-  opacity: .32;
-  mask-image: linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.55) 70%, rgba(0,0,0,.2) 100%);
+    repeating-linear-gradient(90deg, rgba(212,167,44,.11) 0 1px, transparent 1px 56px),
+    repeating-linear-gradient(0deg, rgba(212,167,44,.09) 0 1px, transparent 1px 56px);
+  opacity: .34;
+  mask-image: radial-gradient(110% 110% at 92% 50%, rgba(0,0,0,.92) 0%, rgba(0,0,0,.58) 52%, rgba(0,0,0,.12) 85%, transparent 100%);
   pointer-events: none;
 }
 
 .coin-hero h1 {
   margin: 0 0 22px;
-  font-size: 48px;
+  font-size: 56px;
   line-height: 1.05;
   color: #b8b8b8;
+  font-weight: 700;
 }
 
 .coin-hero-copy {
@@ -525,16 +525,25 @@ body {
 
 .coin-hero-glow {
   position: absolute;
-  width: 230px;
-  height: 230px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212,167,44,.44) 0%, rgba(212,167,44,.16) 42%, rgba(212,167,44,0) 74%);
+  background: radial-gradient(circle, rgba(212,167,44,.5) 0%, rgba(212,167,44,.2) 40%, rgba(212,167,44,0) 75%);
   animation: coinGlow 2.8s ease-in-out infinite;
 }
 
+.coin-lightning {
+  position: absolute;
+  inset: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .coin-hero-ring {
-  width: 188px;
-  height: 188px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -550,12 +559,12 @@ body {
 }
 
 .coin-hero-ring img {
-  width: 136px;
-  height: 136px;
+  width: 165px;
+  height: 165px;
   border-radius: 50%;
   object-fit: cover;
   filter: drop-shadow(0 0 14px rgba(212, 167, 44, 0.64));
-  animation: coinBob 3.2s ease-in-out infinite;
+  animation: coinBob 3s ease-in-out infinite;
 }
 
 .coin-particles {
@@ -632,7 +641,7 @@ body {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-7px);
+    transform: translateY(-9px);
   }
 }
 
@@ -758,7 +767,7 @@ body {
   }
 
   .coin-hero h1 {
-    font-size: 40px;
+    font-size: 46px;
   }
 
   .coin-hero p {
@@ -773,13 +782,13 @@ body {
   }
 
   .coin-hero-ring {
-    width: 154px;
-    height: 154px;
+    width: 184px;
+    height: 184px;
   }
 
   .coin-hero-ring img {
-    width: 112px;
-    height: 112px;
+    width: 138px;
+    height: 138px;
   }
 
   .media-grid.five {
