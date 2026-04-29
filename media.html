@@ -18,7 +18,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 .mobile-menu{display:none;background:transparent;border:0;color:#111;cursor:pointer;font-size:28px;line-height:1;padding:4px 8px;margin-left:auto;}
 
 /* SIDEBAR */
-.sidebar{position:fixed;top:var(--th);left:0;width:var(--sw);bottom:0;background:#fff;border-right:1px solid #e2e0db;display:flex;flex-direction:column;align-items:center;padding-top:20px;gap:2px;z-index:200;overflow-y:auto;}
+.sidebar{position:fixed;top:var(--th);left:0;width:var(--sw);bottom:0;background:#f7f6f3;border-right:1px solid #e2e0db;display:flex;flex-direction:column;align-items:center;padding-top:20px;gap:2px;z-index:200;overflow-y:auto;}
 .ni{display:flex;flex-direction:column;align-items:center;gap:4px;width:88px;padding:9px 6px;border-radius:7px;text-decoration:none;color:#555;transition:background .14s,color .14s;cursor:pointer}
 .ni:hover{background:#f0eeea;color:#111}
 .ni.active{color:#111;background:#f0eeea}
@@ -87,6 +87,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 .video-card.gold{background:linear-gradient(135deg,#3a2c0e,#5e4818);color:#fff;}
 .video-card.blue{background:linear-gradient(135deg,#11233f,#1f3a5f);}
 
+/* DISCLAIMER */
+.disclaimer{background:#f7f6f3;padding:40px 60px;border-top:1px solid #e2e0db;}
+.disclaimer p{font-size:13.5px;line-height:1.75;color:#444;font-weight:300;margin-bottom:14px;max-width:920px;}
+.disclaimer p:last-child{margin-bottom:0;}
+.disclaimer p strong{font-weight:600;color:#111;}
+
 /* FOOTER */
 .footer{background:#fff;padding:40px 60px;border-top:1px solid #e2e0db;}
 .footer-name{font-size:14px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#111;margin-bottom:22px;}
@@ -102,6 +108,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
   .terminal-hero h1{font-size:32px;}
   .terminal-grid{grid-template-columns:1fr;padding:36px 28px;}
   .media-strip,.terminal-section{padding:36px 28px;}
+  .disclaimer,.footer{padding:32px 28px;}
 }
 @media (max-width:820px){
   .terminal-hero h1{font-size:28px;}
@@ -216,6 +223,11 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
   </section>
 
 </section>
+
+<div class="disclaimer">
+  <p>Many financial scams are fraudulently perpetuated in the name of legitimate companies or well-known figures. <strong>I will never ask you to send cryptocurrency or private wallet information in exchange for promised returns.</strong></p>
+  <p>Any views expressed on this website are for informational purposes only and do not constitute legal, tax, investment, or financial advice.</p>
+</div>
 
 <div class="footer">
   <div class="footer-name">Fábio G. Massanga</div>

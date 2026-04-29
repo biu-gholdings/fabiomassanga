@@ -50,7 +50,7 @@ body {
   bottom: 0;
   width: var(--sidebar);
   z-index: 40;
-  background: #fff;
+  background: #f7f6f3;
   border-right: 1px solid #e2e0db;
   display: flex;
   flex-direction: column;
