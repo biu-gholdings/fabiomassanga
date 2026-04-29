@@ -10,9 +10,9 @@
 
   const titles = {
     home: "Fábio G. Massanga",
-    biography: "Biography — Fábio G. Massanga",
-    media: "Media — Fábio G. Massanga",
-    images: "Images — Fábio G. Massanga"
+    biography: "Biography",
+    media: "Media",
+    images: "Images"
   };
 
   const current = routes[path] || "home";
