@@ -321,8 +321,7 @@ body {
 
   .header {
     height: var(--header);
-    padding: 0 28px;
-    justify-content: space-between;
+    padding: 0 26px;
   }
 
   .mobile-menu {
@@ -336,6 +335,7 @@ body {
     padding: 4px 8px;
     font-size: 28px;
     line-height: 1;
+    margin-left: auto;
   }
 
   .sidebar {
