@@ -12,15 +12,26 @@
     home: "Fábio G. Massanga",
     biography: "Biography",
     media: "Media",
-    images: "Images"
+    images: "Images",
+    cubecoin: "CubeCoin"
   };
 
-  const current = routes[path] || "home";
-  document.title = titles[current] || "Fábio G. Massanga";
+  const baseRoute = routes[path] || "home";
 
-  document.querySelectorAll("[data-nav]").forEach((item) => {
-    item.classList.toggle("active", item.dataset.nav === current);
-    if (item.dataset.nav === current) item.setAttribute("aria-current", "page");
-    else item.removeAttribute("aria-current");
-  });
+  function applyState() {
+    const hash = window.location.hash.replace("#", "").toLowerCase();
+    const current = baseRoute === "home" && hash === "cubecoin" ? "cubecoin" : baseRoute;
+
+    document.title = titles[current] || "Fábio G. Massanga";
+
+    document.querySelectorAll("[data-nav]").forEach((item) => {
+      const isActive = item.dataset.nav === current;
+      item.classList.toggle("active", isActive);
+      if (isActive) item.setAttribute("aria-current", "page");
+      else item.removeAttribute("aria-current");
+    });
+  }
+
+  applyState();
+  window.addEventListener("hashchange", applyState);
 })();
