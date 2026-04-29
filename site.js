@@ -13,7 +13,7 @@
     biography: "Biography",
     media: "Media",
     images: "Images",
-    cubecoin: "CubeCoin"
+    cubecoin: "Cubecoin"
   };
 
   const baseRoute = routes[path] || "home";
