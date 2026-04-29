@@ -251,8 +251,8 @@ body {
 .footer {
   margin-left: var(--sidebar);
   padding: 52px 68px;
-  background: #fff;
-  border-top: 1px solid #e2e0db;
+  background: #f7f7f7;
+  border-top: 1px solid #ddd;
 }
 
 .footer-name {
@@ -277,7 +277,7 @@ body {
 }
 
 .copyright {
-  color: #aaa;
+  color: #9a9a9a;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: .12em;
