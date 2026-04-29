@@ -415,7 +415,7 @@ body {
   height: 100%;
   min-height: 460px;
   object-fit: cover;
-  object-position: center 26%;
+  object-position: 62% 51%;
   border: 2px solid #d4af37;
   border-radius: 10px;
   display: block;
@@ -434,7 +434,7 @@ body {
 
   .hero-media img {
     min-height: 320px;
-    object-position: center 24%;
+    object-position: 62% 49%;
   }
 }
 
