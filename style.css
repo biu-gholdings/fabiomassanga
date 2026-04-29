@@ -343,3 +343,44 @@ body {
     display: none;
   }
 }
+
+/* === HERO IMAGE FIX (SAYLOR MATCH) === */
+
+.hero-photo {
+  width: 420px;
+  height: 280px;
+  border-radius: 10px;
+  border: 2px solid #d4af37;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+/* image inside container */
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%; /* 👈 KEY: lifts face into frame */
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .hero-photo {
+    width: 100%;
+    height: 260px;
+  }
+
+  .hero-photo img {
+    object-position: center 15%;
+  }
+}
+
+
+.hero-photo {
+  box-shadow: 0 0 0 1px rgba(212,175,55,0.3),
+              0 10px 30px rgba(0,0,0,0.6);
+}
+
