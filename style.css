@@ -248,6 +248,31 @@ body {
   text-transform: uppercase;
 }
 
+.disclaimer {
+  margin-left: var(--sidebar);
+  padding: 40px 68px;
+  background: #f7f6f3;
+  border-top: 1px solid #e2e0db;
+}
+
+.disclaimer p {
+  margin: 0 0 14px;
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: #444;
+  font-weight: 300;
+  max-width: 920px;
+}
+
+.disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+.disclaimer strong {
+  font-weight: 600;
+  color: #111;
+}
+
 .footer {
   margin-left: var(--sidebar);
   padding: 52px 68px;
@@ -339,7 +364,8 @@ body {
   }
 
   .page,
-  .footer {
+  .footer,
+  .disclaimer {
     margin-left: 0;
   }
 
@@ -363,6 +389,10 @@ body {
 
   .section {
     padding: 42px 28px;
+  }
+
+  .disclaimer {
+    padding: 32px 28px;
   }
 }
 
