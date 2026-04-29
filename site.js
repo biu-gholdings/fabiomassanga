@@ -34,4 +34,43 @@
 
   applyState();
   window.addEventListener("hashchange", applyState);
+
+  const menuToggle = document.querySelector(".mobile-menu");
+  const sidebar = document.querySelector(".sidebar");
+
+  if (menuToggle && sidebar) {
+    function closeMenu() {
+      sidebar.classList.remove("open");
+      document.body.classList.remove("menu-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+
+    function openMenu() {
+      sidebar.classList.add("open");
+      document.body.classList.add("menu-open");
+      menuToggle.setAttribute("aria-expanded", "true");
+    }
+
+    menuToggle.addEventListener("click", function (event) {
+      event.stopPropagation();
+      if (sidebar.classList.contains("open")) closeMenu();
+      else openMenu();
+    });
+
+    sidebar.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        closeMenu();
+      });
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!sidebar.classList.contains("open")) return;
+      if (sidebar.contains(event.target) || menuToggle.contains(event.target)) return;
+      closeMenu();
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && sidebar.classList.contains("open")) closeMenu();
+    });
+  }
 })();
