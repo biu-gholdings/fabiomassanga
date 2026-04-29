@@ -5,7 +5,8 @@
     "index.html": "home",
     "biography.html": "biography",
     "media.html": "media",
-    "images.html": "images"
+    "images.html": "images",
+    "cubecoin.html": "cubecoin"
   };
 
   const titles = {

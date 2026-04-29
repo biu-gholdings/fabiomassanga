@@ -449,3 +449,139 @@ body {
   }
 }
 
+
+/* === CUBECOIN PAGE — SAYLOR-STYLE CONTENT GRID === */
+
+.coin-hero {
+  min-height: 250px;
+  padding: 54px 68px;
+  color: #d4a72c;
+  background:
+    radial-gradient(circle at 72% 35%, rgba(212,167,44,.28), transparent 20%),
+    linear-gradient(135deg, #050505 0%, #0d0d0d 70%);
+  border-bottom: 1px solid #e7e2d8;
+}
+
+.coin-hero h1 {
+  margin: 0 0 22px;
+  font-size: 48px;
+  line-height: 1.05;
+  color: #d4a72c;
+}
+
+.coin-hero p {
+  max-width: 820px;
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.55;
+  color: #d4a72c;
+}
+
+.content-section {
+  padding: 48px 68px 54px;
+  border-bottom: 1px solid #ececec;
+  background: #fff;
+}
+
+.content-section h2 {
+  margin: 0 0 28px;
+  font-size: 36px;
+  line-height: 1.1;
+  color: #2b2b2b;
+}
+
+.media-grid {
+  display: grid;
+  gap: 36px;
+}
+
+.media-grid.five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.media-card {
+  min-width: 0;
+}
+
+.media-thumb {
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.82);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.media-thumb.gold {
+  background: linear-gradient(135deg, #b89225, #6f5616);
+}
+
+.media-thumb.green {
+  background: linear-gradient(135deg, #073d17, #112b18);
+}
+
+.media-thumb.blue {
+  background: linear-gradient(135deg, #102f57, #071526);
+}
+
+.media-thumb.purple {
+  background: linear-gradient(135deg, #3b1239, #160418);
+}
+
+.media-thumb.dark,
+.media-thumb.black {
+  background: linear-gradient(135deg, #050505, #171717);
+}
+
+.media-thumb.navy {
+  background: linear-gradient(135deg, #11142e, #050713);
+}
+
+.media-card h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+  line-height: 1.2;
+  color: #2b2b2b;
+}
+
+.media-card p {
+  margin: 0;
+  color: #555;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+@media (max-width: 1200px) {
+  .media-grid.five {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .coin-hero,
+  .content-section {
+    padding: 38px 26px;
+  }
+
+  .coin-hero h1 {
+    font-size: 40px;
+  }
+
+  .coin-hero p {
+    font-size: 18px;
+  }
+
+  .media-grid.five {
+    grid-template-columns: 1fr;
+  }
+
+  .media-thumb {
+    height: 190px;
+  }
+}
