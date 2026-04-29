@@ -3,9 +3,9 @@
 
   const routes = {
     "index.html": "home",
-    "Biography.html": "biography",
-    "Media.html": "media",
-    "Images.html": "images"
+    "biography.html": "biography",
+    "media.html": "media",
+    "images.html": "images"
   };
 
   const titles = {
