@@ -118,131 +118,87 @@
     </section>
 
     <!-- ── REGULATORS REFERENCE ── -->
-    <div class="sec" id="regulators">
-      <div class="sec-header" style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px;">
-        <div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#888;margin-bottom:6px;">Policy &amp; Compliance</div>
-          <div class="sec-h" style="margin-bottom:0;">Regulatory Reference</div>
-        </div>
-      </div>
-      <p style="font-size:14.5px;line-height:1.7;color:#555;font-weight:300;max-width:700px;margin-bottom:32px;">
+    <section class="home-sec" id="regulators" aria-labelledby="regulators-heading">
+      <div class="home-sec__eyebrow">Policy &amp; Compliance</div>
+      <h2 class="home-sec__title" id="regulators-heading">Regulatory Reference</h2>
+      <p class="home-sec__intro">
         CubeShackles is being built in alignment with Angola's core financial, tax, and regulatory institutions — ensuring transparency, auditability, and national compliance from day one.
       </p>
 
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;">
-
-        <!-- BNA -->
-        <a href="https://www.bna.ao/#/pt" target="_blank" rel="noopener"
-           style="display:flex;flex-direction:column;text-decoration:none;color:inherit;
-                  border:1px solid #e2e0db;border-radius:8px;padding:22px 20px 20px;
-                  background:#fff;transition:border-color .18s,box-shadow .18s;cursor:pointer;"
-           onmouseover="this.style.borderColor='#c8a84b';this.style.boxShadow='0 4px 18px rgba(200,168,75,0.13)'"
-           onmouseout="this.style.borderColor='#e2e0db';this.style.boxShadow='none'">
-          <!-- Logo placeholder -->
-          <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#003366,#0055aa);
-                      display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;">
-            <span style="font-size:11px;font-weight:800;color:#fff;letter-spacing:.04em;">BNA</span>
-          </div>
-          <div style="font-size:13px;font-weight:700;color:#111;margin-bottom:6px;line-height:1.3;">Banco Nacional de Angola</div>
-          <div style="font-size:12px;color:#888;font-weight:300;line-height:1.5;flex:1;">Central bank — monetary policy, banking supervision &amp; currency regulation</div>
-          <div style="margin-top:14px;font-size:11.5px;font-weight:600;color:#c8a84b;letter-spacing:.04em;display:flex;align-items:center;gap:4px;">
-            bna.ao <span style="font-size:13px;">↗</span>
-          </div>
+      <div class="reg-ref-grid">
+        <a class="reg-card" href="https://www.bna.ao/#/pt" target="_blank" rel="noopener">
+          <div class="reg-card__badge reg-card__badge--bna" aria-hidden="true"><span>BNA</span></div>
+          <div class="reg-card__name">Banco Nacional de Angola</div>
+          <div class="reg-card__desc">Central bank — monetary policy, banking supervision &amp; currency regulation</div>
+          <div class="reg-card__link">bna.ao <span aria-hidden="true">↗</span></div>
         </a>
 
-        <!-- Minfin -->
-        <a href="https://www.minfin.gov.ao/" target="_blank" rel="noopener"
-           style="display:flex;flex-direction:column;text-decoration:none;color:inherit;
-                  border:1px solid #e2e0db;border-radius:8px;padding:22px 20px 20px;
-                  background:#fff;transition:border-color .18s,box-shadow .18s;cursor:pointer;"
-           onmouseover="this.style.borderColor='#c8a84b';this.style.boxShadow='0 4px 18px rgba(200,168,75,0.13)'"
-           onmouseout="this.style.borderColor='#e2e0db';this.style.boxShadow='none'">
-          <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#004d1a,#007a2a);
-                      display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;">
-            <span style="font-size:9.5px;font-weight:800;color:#fff;letter-spacing:.02em;text-align:center;line-height:1.2;">MIN<br>FIN</span>
-          </div>
-          <div style="font-size:13px;font-weight:700;color:#111;margin-bottom:6px;line-height:1.3;">Ministério das Finanças</div>
-          <div style="font-size:12px;color:#888;font-weight:300;line-height:1.5;flex:1;">Public finance ministry — fiscal policy, state budget &amp; financial governance</div>
-          <div style="margin-top:14px;font-size:11.5px;font-weight:600;color:#c8a84b;letter-spacing:.04em;display:flex;align-items:center;gap:4px;">
-            minfin.gov.ao <span style="font-size:13px;">↗</span>
-          </div>
+        <a class="reg-card" href="https://www.minfin.gov.ao/" target="_blank" rel="noopener">
+          <div class="reg-card__badge reg-card__badge--minfin" aria-hidden="true"><span>MIN<br>FIN</span></div>
+          <div class="reg-card__name">Ministério das Finanças</div>
+          <div class="reg-card__desc">Public finance ministry — fiscal policy, state budget &amp; financial governance</div>
+          <div class="reg-card__link">minfin.gov.ao <span aria-hidden="true">↗</span></div>
         </a>
 
-        <!-- AGT -->
-        <a href="https://agt.minfin.gov.ao/PortalAGT/#!/" target="_blank" rel="noopener"
-           style="display:flex;flex-direction:column;text-decoration:none;color:inherit;
-                  border:1px solid #e2e0db;border-radius:8px;padding:22px 20px 20px;
-                  background:#fff;transition:border-color .18s,box-shadow .18s;cursor:pointer;"
-           onmouseover="this.style.borderColor='#c8a84b';this.style.boxShadow='0 4px 18px rgba(200,168,75,0.13)'"
-           onmouseout="this.style.borderColor='#e2e0db';this.style.boxShadow='none'">
-          <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#4a1a00,#8a3200);
-                      display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;">
-            <span style="font-size:11px;font-weight:800;color:#fff;letter-spacing:.04em;">AGT</span>
-          </div>
-          <div style="font-size:13px;font-weight:700;color:#111;margin-bottom:6px;line-height:1.3;">Administração Geral Tributária</div>
-          <div style="font-size:12px;color:#888;font-weight:300;line-height:1.5;flex:1;">National tax authority — tax collection, compliance &amp; revenue administration</div>
-          <div style="margin-top:14px;font-size:11.5px;font-weight:600;color:#c8a84b;letter-spacing:.04em;display:flex;align-items:center;gap:4px;">
-            agt.minfin.gov.ao <span style="font-size:13px;">↗</span>
-          </div>
+        <a class="reg-card" href="https://agt.minfin.gov.ao/PortalAGT/#!/" target="_blank" rel="noopener">
+          <div class="reg-card__badge reg-card__badge--agt" aria-hidden="true"><span>AGT</span></div>
+          <div class="reg-card__name">Administração Geral Tributária</div>
+          <div class="reg-card__desc">National tax authority — tax collection, compliance &amp; revenue administration</div>
+          <div class="reg-card__link">agt.minfin.gov.ao <span aria-hidden="true">↗</span></div>
         </a>
 
-        <!-- ARSEG -->
-        <a href="https://www.arseg.ao/" target="_blank" rel="noopener"
-           style="display:flex;flex-direction:column;text-decoration:none;color:inherit;
-                  border:1px solid #e2e0db;border-radius:8px;padding:22px 20px 20px;
-                  background:#fff;transition:border-color .18s,box-shadow .18s;cursor:pointer;"
-           onmouseover="this.style.borderColor='#c8a84b';this.style.boxShadow='0 4px 18px rgba(200,168,75,0.13)'"
-           onmouseout="this.style.borderColor='#e2e0db';this.style.boxShadow='none'">
-          <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#1a0040,#3a0080);
-                      display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;">
-            <span style="font-size:9px;font-weight:800;color:#fff;letter-spacing:.02em;text-align:center;line-height:1.2;">ARS<br>EG</span>
-          </div>
-          <div style="font-size:13px;font-weight:700;color:#111;margin-bottom:6px;line-height:1.3;">ARSEG</div>
-          <div style="font-size:12px;color:#888;font-weight:300;line-height:1.5;flex:1;">Insurance &amp; pension regulator — supervisão do setor segurador e fundos de pensões</div>
-          <div style="margin-top:14px;font-size:11.5px;font-weight:600;color:#c8a84b;letter-spacing:.04em;display:flex;align-items:center;gap:4px;">
-            arseg.ao <span style="font-size:13px;">↗</span>
-          </div>
+        <a class="reg-card" href="https://www.arseg.ao/" target="_blank" rel="noopener">
+          <div class="reg-card__badge reg-card__badge--arseg" aria-hidden="true"><span>ARS<br>EG</span></div>
+          <div class="reg-card__name">ARSEG</div>
+          <div class="reg-card__desc">Insurance &amp; pension regulator — supervisão do setor segurador e fundos de pensões</div>
+          <div class="reg-card__link">arseg.ao <span aria-hidden="true">↗</span></div>
         </a>
 
-        <!-- CMC -->
-        <a href="https://www.cmc.ao/pt-pt" target="_blank" rel="noopener"
-           style="display:flex;flex-direction:column;text-decoration:none;color:inherit;
-                  border:1px solid #e2e0db;border-radius:8px;padding:22px 20px 20px;
-                  background:#fff;transition:border-color .18s,box-shadow .18s;cursor:pointer;"
-           onmouseover="this.style.borderColor='#c8a84b';this.style.boxShadow='0 4px 18px rgba(200,168,75,0.13)'"
-           onmouseout="this.style.borderColor='#e2e0db';this.style.boxShadow='none'">
-          <div style="width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#002840,#004a70);
-                      display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;">
-            <span style="font-size:11px;font-weight:800;color:#fff;letter-spacing:.04em;">CMC</span>
-          </div>
-          <div style="font-size:13px;font-weight:700;color:#111;margin-bottom:6px;line-height:1.3;">Comissão do Mercado de Capitais</div>
-          <div style="font-size:12px;color:#888;font-weight:300;line-height:1.5;flex:1;">Capital markets regulator — securities, investment funds &amp; market oversight</div>
-          <div style="margin-top:14px;font-size:11.5px;font-weight:600;color:#c8a84b;letter-spacing:.04em;display:flex;align-items:center;gap:4px;">
-            cmc.ao <span style="font-size:13px;">↗</span>
-          </div>
+        <a class="reg-card" href="https://www.cmc.ao/pt-pt" target="_blank" rel="noopener">
+          <div class="reg-card__badge reg-card__badge--cmc" aria-hidden="true"><span>CMC</span></div>
+          <div class="reg-card__name">Comissão do Mercado de Capitais</div>
+          <div class="reg-card__desc">Capital markets regulator — securities, investment funds &amp; market oversight</div>
+          <div class="reg-card__link">cmc.ao <span aria-hidden="true">↗</span></div>
         </a>
-
       </div>
-    </div>
+    </section>
 
     <!-- VENTURES -->
-    <div class="sec" id="cubecoin">
-      <div class="sec-h">Ventures &amp; Platforms</div>
+    <section class="home-sec" id="cubecoin" aria-labelledby="ventures-heading">
+      <h2 class="home-ventures__title" id="ventures-heading">Ventures &amp; Platforms</h2>
       <div class="vc-grid">
-        <a class="vc" href="fabio-cubecoin.html">
-          <div class="vc-top"><span class="vc-dot" style="background:var(--gold)"></span><span class="vc-name">CubeCoin</span></div>
+        <a class="vc" href="cubecoin.html">
+          <div class="vc-top">
+            <div class="vc-top-left">
+              <span class="vc-dot" style="background: var(--gold)"></span>
+              <span class="vc-name">Cubecoin</span>
+            </div>
+            <span class="vc-external" aria-hidden="true">↗</span>
+          </div>
           <p>A sovereign digital asset for Angola's financial ecosystem, enabling identity-linked transactions at the institutional level.</p>
         </a>
         <a class="vc" href="https://cubeshackles.com" target="_blank" rel="noopener">
-          <div class="vc-top"><span class="vc-dot" style="background:#4a90d9"></span><span class="vc-name">CubeShackles</span></div>
+          <div class="vc-top">
+            <div class="vc-top-left">
+              <span class="vc-dot" style="background: #4a90d9"></span>
+              <span class="vc-name">Cubeshackles</span>
+            </div>
+            <span class="vc-external" aria-hidden="true">↗</span>
+          </div>
           <p>Regulator-readable financial operating system providing payment visibility and compliance infrastructure for Angolan institutions.</p>
         </a>
         <a class="vc" href="https://biugacademy.org" target="_blank" rel="noopener">
-          <div class="vc-top"><span class="vc-dot" style="background:#27ae60"></span><span class="vc-name">BIU.G Academy</span></div>
+          <div class="vc-top">
+            <div class="vc-top-left">
+              <span class="vc-dot" style="background: #27ae60"></span>
+              <span class="vc-name">BIU.G Academy</span>
+            </div>
+            <span class="vc-external" aria-hidden="true">↗</span>
+          </div>
           <p>Financial literacy and sovereign economic empowerment platform serving Angola and the broader African continent.</p>
         </a>
       </div>
-    </div>
+    </section>
   </main>
 
   <section class="disclaimer">
