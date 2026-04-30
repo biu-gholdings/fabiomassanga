@@ -16,10 +16,10 @@
 
   const titles = {
     home: "Fábio G. Massanga",
-    biography: "Biography — Fábio G. Massanga",
-    media: "Media — Fábio G. Massanga",
-    images: "Images — Fábio G. Massanga",
-    cubecoin: "CubeCoin — Fábio G. Massanga"
+    biography: "Biography",
+    media: "Media",
+    images: "Images",
+    cubecoin: "CubeCoin"
   };
 
   const baseRoute = routes[normalizedPath] || "home";
