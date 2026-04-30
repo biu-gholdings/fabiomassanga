@@ -589,6 +589,14 @@ body {
   font-size: 11px;
 }
 
+.reg-card__badge--bna img,
+.reg-card__badge--agt img,
+.reg-card__badge--minfin img {
+  width: 115%;
+  height: 115%;
+  object-fit: contain;
+}
+
 .reg-card__badge--arseg {
   background: #fff;
 }
