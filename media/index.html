@@ -3,21 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Media</title>
-<link rel="icon" type="image/png" sizes="512x512" href="assets/site-favicon.png">
-<link rel="apple-touch-icon" href="assets/site-favicon.png">
+<title>Media — Fábio G. Massanga</title>
+<link rel="canonical" href="https://fabiomassanga.com/media/">
+<link rel="icon" type="image/png" sizes="512x512" href="../assets/site-favicon.png">
+<link rel="apple-touch-icon" href="../assets/site-favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--gold:#c8a84b;--sw:112px;--th:76px;--mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;}
 body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-height:100vh;}
-
-/* TOP BAR */
 .topbar{position:fixed;top:0;left:0;right:0;height:var(--th);background:#fff;border-bottom:1px solid #e2e0db;display:flex;align-items:center;padding:0 26px;z-index:300;}
 .topbar-name{font-size:17px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#111;text-decoration:none;}
 .mobile-menu{display:none;background:transparent;border:0;color:#111;cursor:pointer;font-size:28px;line-height:1;padding:4px 8px;margin-left:auto;}
-
-/* SIDEBAR */
 .sidebar{position:fixed;top:var(--th);left:0;width:var(--sw);bottom:0;background:#f7f6f3;border-right:1px solid #e2e0db;display:flex;flex-direction:column;align-items:center;padding-top:20px;gap:2px;z-index:200;overflow-y:auto;}
 .ni{display:flex;flex-direction:column;align-items:center;gap:4px;width:88px;padding:9px 6px;border-radius:7px;text-decoration:none;color:#555;transition:background .14s,color .14s;cursor:pointer}
 .ni:hover{background:#f0eeea;color:#111}
@@ -25,15 +22,9 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 .ni svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7}
 .ni-label{font-size:10.5px;font-weight:500;letter-spacing:.01em;text-align:center;line-height:1.3}
 .ni-btc{width:22px;height:22px;border-radius:50%;background:#f7931a;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
-
-/* MAIN */
 .main{margin-top:var(--th);margin-left:var(--sw);}
-
-/* TERMINAL PAGE */
 .terminal-page{background:#0d0d0d;color:#f1efe9;min-height:calc(100vh - var(--th));}
 .terminal-page::before{content:'';display:block;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-
-/* HERO */
 .terminal-hero{padding:64px 60px 48px;display:grid;grid-template-columns:1fr 320px;gap:56px;align-items:end;border-bottom:1px solid #1f1f1f;background:radial-gradient(1200px 400px at 80% -10%,rgba(200,168,75,.08),transparent 60%);}
 .terminal-hero .eyebrow{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--gold);margin-bottom:18px;}
 .terminal-hero h1{font-size:42px;font-weight:600;line-height:1.12;letter-spacing:-.02em;color:#fff;margin-bottom:20px;max-width:760px;}
@@ -43,7 +34,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 .terminal-status strong{font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.06em;animation:statusFlash 2.1s ease-in-out infinite;}
 .terminal-status strong::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-right:8px;vertical-align:middle;box-shadow:0 0 0 4px rgba(200,168,75,.15);animation:statusPing 1.6s ease-out infinite;}
 .terminal-status small{font-size:11px;color:rgba(255,255,255,.55);line-height:1.5;font-weight:400;letter-spacing:.04em;}
-
 @keyframes statusPing{
   0%{transform:scale(1);box-shadow:0 0 0 0 rgba(200,168,75,.42);}
   70%{transform:scale(1.35);box-shadow:0 0 0 8px rgba(200,168,75,0);}
@@ -53,8 +43,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
   0%,100%{color:var(--gold);text-shadow:0 0 0 rgba(200,168,75,0);}
   50%{color:#dfbe67;text-shadow:0 0 8px rgba(200,168,75,.35);}
 }
-
-/* TERMINAL GRID — feature cards */
 .terminal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:48px 60px;border-bottom:1px solid #1f1f1f;}
 .terminal-card{position:relative;border:1px solid #2a2a2a;background:#141414;padding:32px 30px 28px;border-radius:8px;display:flex;flex-direction:column;gap:14px;transition:border-color .18s,transform .18s;overflow:hidden;}
 .terminal-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:#2a2a2a;transition:background .18s;}
@@ -68,25 +56,17 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 .terminal-card p{font-size:14px;line-height:1.7;color:rgba(255,255,255,.66);font-weight:300;}
 .terminal-card a{margin-top:6px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--gold);text-decoration:none;align-self:flex-start;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .15s;}
 .terminal-card a:hover{border-bottom-color:var(--gold);}
-
-/* SECTIONS */
 .media-strip,.terminal-section{padding:44px 60px;border-bottom:1px solid #1f1f1f;}
 .media-strip:last-child,.terminal-section:last-child{border-bottom:none;}
 .media-strip h2,.terminal-section h2{font-size:22px;font-weight:500;color:#fff;letter-spacing:-.005em;margin-bottom:24px;display:flex;align-items:center;gap:14px;}
 .media-strip h2::before,.terminal-section h2::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);}
-
-/* HORIZONTAL RAIL */
 .horizontal-rail{display:flex;gap:14px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;scrollbar-color:#2a2a2a transparent;}
 .horizontal-rail::-webkit-scrollbar{height:4px;}
 .horizontal-rail::-webkit-scrollbar-thumb{background:#2a2a2a;border-radius:2px;}
 .horizontal-rail::-webkit-scrollbar-thumb:hover{background:var(--gold);}
-
-/* BRIEF CARD */
 .brief-card{flex:0 0 240px;height:140px;border:1px solid #2a2a2a;background:linear-gradient(135deg,#161616,#0e0e0e);border-radius:6px;padding:18px 20px;display:flex;align-items:flex-end;font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.78);text-transform:uppercase;line-height:1.45;cursor:pointer;transition:border-color .18s,background .18s,color .18s;position:relative;overflow:hidden;}
 .brief-card::before{content:'';position:absolute;top:14px;right:14px;width:8px;height:8px;border-top:1px solid var(--gold);border-right:1px solid var(--gold);transform:rotate(45deg);opacity:.6;}
 .brief-card:hover{border-color:var(--gold);color:#fff;background:linear-gradient(135deg,#1a1a1a,#0e0e0e);}
-
-/* VIDEO CARDS */
 .video-card{flex:0 0 220px;height:135px;border:1px solid #2a2a2a;border-radius:6px;padding:16px 18px;display:flex;align-items:flex-end;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;color:#fff;text-transform:uppercase;cursor:pointer;transition:transform .18s,border-color .18s;position:relative;overflow:hidden;background:#161616;}
 .video-card::after{content:'▶';position:absolute;top:14px;left:16px;font-size:11px;color:rgba(255,255,255,.85);}
 .video-card:hover{transform:translateY(-2px);border-color:var(--gold);}
@@ -96,14 +76,10 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 .video-card.teal{background:linear-gradient(135deg,#0e2e30,#1a4848);}
 .video-card.gold{background:linear-gradient(135deg,#3a2c0e,#5e4818);color:#fff;}
 .video-card.blue{background:linear-gradient(135deg,#11233f,#1f3a5f);}
-
-/* DISCLAIMER */
 .disclaimer{background:#f7f6f3;padding:40px 60px;border-top:1px solid #e2e0db;}
 .disclaimer p{font-size:13.5px;line-height:1.75;color:#444;font-weight:300;margin-bottom:14px;max-width:920px;}
 .disclaimer p:last-child{margin-bottom:0;}
 .disclaimer p strong{font-weight:600;color:#111;}
-
-/* FOOTER */
 .footer{background:#fff;padding:40px 60px;border-top:1px solid #e2e0db;}
 .footer-name{font-size:14px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#111;margin-bottom:22px;text-decoration:none;display:inline-block;}
 .socials{display:flex;gap:22px;margin-bottom:22px;}
@@ -111,8 +87,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 .socials a:hover{color:var(--gold);}
 .socials svg{width:28px;height:28px;fill:currentColor;}
 .copy{font-size:11.5px;color:#aaa;letter-spacing:.05em;text-transform:uppercase;}
-
-/* RESPONSIVE */
 @media (max-width:1080px){
   .terminal-hero{grid-template-columns:1fr;padding:44px 28px 36px;gap:32px;}
   .terminal-hero h1{font-size:32px;}
@@ -132,42 +106,35 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 </style>
 </head>
 <body>
-
-<!-- TOP BAR -->
-<div class="topbar"><a href="index.html" class="topbar-name">Fábio G. Massanga</a><button class="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false">☰</button></div>
-
-<!-- SIDEBAR -->
+<div class="topbar"><a href="/" class="topbar-name">Fábio G. Massanga</a><button class="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false">☰</button></div>
 <nav class="sidebar">
-  <a href="biography.html" class="ni">
+  <a href="/biography/" class="ni">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
     <span class="ni-label">Biography</span>
   </a>
-  <a href="media.html" class="ni active">
+  <a href="/media/" class="ni active">
     <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
     <span class="ni-label">Media</span>
   </a>
-  <a href="images.html" class="ni">
+  <a href="/images/" class="ni">
     <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
     <span class="ni-label">Images</span>
   </a>
-  <a href="cubecoin.html" class="ni">
-    <img src="assets/cubecoin-icon.png" alt="Cubecoin" style="width:28px;height:28px;object-fit:contain;">
+  <a href="/cubecoin/" class="ni">
+    <img src="../assets/cubecoin-icon.png" alt="Cubecoin" style="width:28px;height:28px;object-fit:contain;">
     <span class="ni-label">Cubecoin</span>
   </a>
   <a href="https://cubeshackles.com" target="_blank" rel="noopener" class="ni">
-    <img src="assets/cubeshackles-icon.png" alt="Cubeshackles" style="width:28px;height:28px;border-radius:4px;object-fit:contain;">
+    <img src="../assets/cubeshackles-icon.png" alt="Cubeshackles" style="width:28px;height:28px;border-radius:4px;object-fit:contain;">
     <span class="ni-label">Cubeshackles</span>
   </a>
-  <a href="https://biugacademy.org" target="_blank" rel="noopener" class="ni">
-    <img src="assets/biug-academy-icon.png" alt="BIU.G Academy" style="width:28px;height:28px;border-radius:50%;object-fit:cover;mix-blend-mode:multiply;">
+  <a href="https://biu-gacademy.org" target="_blank" rel="noopener" class="ni">
+    <img src="../assets/biug-academy-icon.png" alt="BIU.G Academy" style="width:28px;height:28px;border-radius:50%;object-fit:cover;mix-blend-mode:multiply;">
     <span class="ni-label">BIU.G Academy</span>
   </a>
 </nav>
-
 <main class="main">
-
 <section class="terminal-page media-page">
-
   <header class="terminal-hero">
     <div>
       <p class="eyebrow">FÁBIO G. MASSANGA • MEDIA INTELLIGENCE</p>
@@ -176,14 +143,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
         Public-facing briefings, institutional commentary, and sovereign financial infrastructure analysis focused on Angola-first execution.
       </p>
     </div>
-
     <div class="terminal-status">
       <span>STATUS</span>
       <strong>ACTIVE DEVELOPMENT</strong>
       <small>Cubeshackles • BualaBuitu • BIU.G Academy</small>
     </div>
   </header>
-
   <section class="terminal-grid">
     <article class="terminal-card gold">
       <span>LINKEDIN ARTICLE</span>
@@ -191,7 +156,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
       <p>Angola’s financial access challenge is structural: identity, payments, compliance, settlement, taxation, and public trust.</p>
       <a href="https://www.linkedin.com/pulse/why-angola-must-build-its-own-financial-layer-f%C3%A1bio-massanga-35tac?utm_source=share&utm_medium=member_ios&utm_campaign=share_via" target="_blank" rel="noopener">READ ON LINKEDIN →</a>
     </article>
-
     <article class="terminal-card blue">
       <span>LINKEDIN ARTICLE</span>
       <h2>Digital Identity as the Control Layer of Angola’s Financial System</h2>
@@ -199,7 +163,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
       <a href="https://www.linkedin.com/pulse/digital-identity-control-layer-angolas-financial-f%C3%A1bio-massanga-oihgc?utm_source=share&utm_medium=member_ios&utm_campaign=share_via" target="_blank" rel="noopener">READ ON LINKEDIN →</a>
     </article>
   </section>
-
   <section class="media-strip">
     <h2>Public Briefings</h2>
     <div class="horizontal-rail">
@@ -210,7 +173,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
       <article class="brief-card">SOVEREIGN FINANCE FORUM</article>
     </div>
   </section>
-
   <section class="terminal-section">
     <h2>News</h2>
     <div class="horizontal-rail">
@@ -221,7 +183,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
       <article class="video-card teal">FINANCE</article>
     </div>
   </section>
-
   <section class="terminal-section">
     <h2>Interviews</h2>
     <div class="horizontal-rail">
@@ -231,16 +192,13 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
       <article class="video-card blue">REGULATORS &amp; REALITY</article>
     </div>
   </section>
-
 </section>
-
 <div class="disclaimer">
   <p>Many financial scams are fraudulently perpetuated in the name of legitimate companies or well-known figures. <strong>I will never ask you to send cryptocurrency or private wallet information in exchange for promised returns.</strong></p>
   <p>Any views expressed on this website are for informational purposes only and do not constitute legal, tax, investment, or financial advice.</p>
 </div>
-
 <div class="footer">
-  <a class="footer-name" href="index.html">Fábio G. Massanga</a>
+  <a class="footer-name" href="/">Fábio G. Massanga</a>
   <div class="socials">
     <a href="https://x.com/gui_massanga?s=21" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63z"/></svg></a>
     <a href="https://www.linkedin.com/in/fabiomassanga" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455zM5.337 7.433a2.062 2.062 0 110-4.124 2.062 2.062 0 010 4.124zM7.119 20.452H3.555V9h3.564z"/></svg></a>
@@ -248,9 +206,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
   </div>
   <div class="copy">© 2026 Copyright Fábio G. Massanga. All Rights Reserved.</div>
 </div>
-
 </main>
-
-<script src="site.js"></script>
+<script src="../site.js"></script>
 </body>
 </html>

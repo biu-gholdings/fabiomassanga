@@ -1,23 +1,28 @@
 (function () {
-  const path = window.location.pathname.split("/").pop() || "index.html";
+  const normalizedPath = window.location.pathname.replace(/\/+$/, "") || "/";
 
   const routes = {
-    "index.html": "home",
-    "biography.html": "biography",
-    "media.html": "media",
-    "images.html": "images",
-    "cubecoin.html": "cubecoin"
+    "/": "home",
+    "/index.html": "home",
+    "/biography": "biography",
+    "/biography/index.html": "biography",
+    "/media": "media",
+    "/media/index.html": "media",
+    "/images": "images",
+    "/images/index.html": "images",
+    "/cubecoin": "cubecoin",
+    "/cubecoin/index.html": "cubecoin"
   };
 
   const titles = {
     home: "Fábio G. Massanga",
-    biography: "Biography",
-    media: "Media",
-    images: "Images",
-    cubecoin: "Cubecoin"
+    biography: "Biography — Fábio G. Massanga",
+    media: "Media — Fábio G. Massanga",
+    images: "Images — Fábio G. Massanga",
+    cubecoin: "CubeCoin — Fábio G. Massanga"
   };
 
-  const baseRoute = routes[path] || "home";
+  const baseRoute = routes[normalizedPath] || "home";
 
   function applyState() {
     const hash = window.location.hash.replace("#", "").toLowerCase();

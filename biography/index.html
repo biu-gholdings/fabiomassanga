@@ -3,21 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Biography</title>
-<link rel="icon" type="image/png" sizes="512x512" href="assets/site-favicon.png">
-<link rel="apple-touch-icon" href="assets/site-favicon.png">
+<title>Biography — Fábio G. Massanga</title>
+<link rel="canonical" href="https://fabiomassanga.com/biography/">
+<link rel="icon" type="image/png" sizes="512x512" href="../assets/site-favicon.png">
+<link rel="apple-touch-icon" href="../assets/site-favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--gold:#c8a84b;--sw:112px;--th:76px;}
 body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-height:100vh;}
-
-/* TOP BAR */
 .topbar{position:fixed;top:0;left:0;right:0;height:var(--th);background:#fff;border-bottom:1px solid #e2e0db;display:flex;align-items:center;padding:0 26px;z-index:300;}
 .topbar-name{font-size:17px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#111;text-decoration:none;}
 .mobile-menu{display:none;background:transparent;border:0;color:#111;cursor:pointer;font-size:28px;line-height:1;padding:4px 8px;margin-left:auto;}
-
-/* SIDEBAR */
 .sidebar{position:fixed;top:var(--th);left:0;width:var(--sw);bottom:0;background:#f7f6f3;border-right:1px solid #e2e0db;display:flex;flex-direction:column;align-items:center;padding-top:20px;gap:2px;z-index:200;overflow-y:auto;}
 .ni{display:flex;flex-direction:column;align-items:center;gap:4px;width:88px;padding:9px 6px;border-radius:7px;text-decoration:none;color:#555;transition:background .14s,color .14s;cursor:pointer}
 .ni:hover{background:#f0eeea;color:#111}
@@ -25,18 +22,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 .ni svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7}
 .ni-label{font-size:10.5px;font-weight:500;letter-spacing:.01em;text-align:center;line-height:1.3}
 .ni-btc{width:22px;height:22px;border-radius:50%;background:#f7931a;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff}
-
-/* MAIN */
 .main{margin-top:var(--th);margin-left:var(--sw);}
-
-/* BANNER */
 .banner{background:#111;min-height:180px;display:flex;align-items:flex-end;padding:0 60px 36px;position:relative;overflow:hidden;}
 .banner::before{content:'';position:absolute;inset:0;background:linear-gradient(108deg,#111 0%,#1a1a1a 45%,#111 100%);}
 .banner::after{content:'';position:absolute;right:-40px;top:0;bottom:0;width:420px;background:repeating-linear-gradient(-55deg,transparent,transparent 28px,rgba(200,168,75,.55) 28px,rgba(200,168,75,.55) 44px);clip-path:polygon(38% 0%,100% 0%,100% 100%,18% 100%);}
 .banner-eyebrow{position:relative;z-index:2;font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
 .banner-title{position:relative;z-index:2;font-size:42px;font-weight:700;color:#fff;letter-spacing:-.01em;}
-
-/* BIO LAYOUT */
 .bio-wrap{background:#fff;padding:56px 60px 60px;display:grid;grid-template-columns:1fr 360px;gap:64px;align-items:start;}
 .biography-full h1{font-size:24px;font-weight:600;color:#111;letter-spacing:-.005em;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid #eceae6;}
 .biography-full p{font-size:15.5px;line-height:1.80;color:#222;font-weight:300;margin-bottom:20px;max-width:760px;}
@@ -44,18 +35,13 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 .biography-full strong{font-weight:600;color:#111;}
 .biography-full a{color:#1a5fcc;text-decoration:underline;text-underline-offset:2px;}
 .biography-full a:hover{color:#0d3d8a;}
-
 .bio-portrait{position:sticky;top:80px;}
 .bio-portrait img{width:100%;height:auto;display:block;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.15);}
 .bio-portrait-cap{margin-top:14px;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#888;text-align:center;}
-
-/* DISCLAIMER */
 .disclaimer{background:#f7f6f3;padding:40px 60px;border-top:1px solid #e2e0db;}
 .disclaimer p{font-size:13.5px;line-height:1.75;color:#444;font-weight:300;margin-bottom:14px;max-width:920px;}
 .disclaimer p:last-child{margin-bottom:0;}
 .disclaimer p strong{font-weight:600;color:#111;}
-
-/* FOOTER */
 .footer{background:#fff;padding:40px 60px;border-top:1px solid #e2e0db;}
 .footer-name{font-size:14px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#111;margin-bottom:22px;text-decoration:none;display:inline-block;}
 .socials{display:flex;gap:22px;margin-bottom:22px;}
@@ -63,8 +49,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 .socials a:hover{color:var(--gold);}
 .socials svg{width:28px;height:28px;fill:currentColor;}
 .copy{font-size:11.5px;color:#aaa;letter-spacing:.05em;text-transform:uppercase;}
-
-/* RESPONSIVE */
 @media (max-width:1080px){
   .banner{padding:0 28px 28px;min-height:140px;}
   .banner-title{font-size:32px;}
@@ -83,89 +67,65 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
 </style>
 </head>
 <body>
-
-<!-- TOP BAR -->
-<div class="topbar"><a href="index.html" class="topbar-name">Fábio G. Massanga</a><button class="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false">☰</button></div>
-
-<!-- SIDEBAR -->
+<div class="topbar"><a href="/" class="topbar-name">Fábio G. Massanga</a><button class="mobile-menu" type="button" aria-label="Open menu" aria-expanded="false">☰</button></div>
 <nav class="sidebar">
-  <a href="biography.html" class="ni active">
+  <a href="/biography/" class="ni active">
     <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
     <span class="ni-label">Biography</span>
   </a>
-  <a href="media.html" class="ni">
+  <a href="/media/" class="ni">
     <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
     <span class="ni-label">Media</span>
   </a>
-  <a href="images.html" class="ni">
+  <a href="/images/" class="ni">
     <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
     <span class="ni-label">Images</span>
   </a>
-  <a href="cubecoin.html" class="ni">
-    <img src="assets/cubecoin-icon.png" alt="Cubecoin" style="width:28px;height:28px;object-fit:contain;">
+  <a href="/cubecoin/" class="ni">
+    <img src="../assets/cubecoin-icon.png" alt="Cubecoin" style="width:28px;height:28px;object-fit:contain;">
     <span class="ni-label">Cubecoin</span>
   </a>
   <a href="https://cubeshackles.com" target="_blank" rel="noopener" class="ni">
-    <img src="assets/cubeshackles-icon.png" alt="Cubeshackles" style="width:28px;height:28px;border-radius:4px;object-fit:contain;">
+    <img src="../assets/cubeshackles-icon.png" alt="Cubeshackles" style="width:28px;height:28px;border-radius:4px;object-fit:contain;">
     <span class="ni-label">Cubeshackles</span>
   </a>
-  <a href="https://biugacademy.org" target="_blank" rel="noopener" class="ni">
-    <img src="assets/biug-academy-icon.png" alt="BIU.G Academy" style="width:28px;height:28px;border-radius:50%;object-fit:cover;mix-blend-mode:multiply;">
+  <a href="https://biu-gacademy.org" target="_blank" rel="noopener" class="ni">
+    <img src="../assets/biug-academy-icon.png" alt="BIU.G Academy" style="width:28px;height:28px;border-radius:50%;object-fit:cover;mix-blend-mode:multiply;">
     <span class="ni-label">BIU.G Academy</span>
   </a>
 </nav>
-
 <main class="main">
   <div class="banner">
     <div>
       <h1 class="banner-title">Biography</h1>
     </div>
   </div>
-
   <div class="bio-wrap">
     <section class="biography-full">
-
       <p>Fábio G. Massanga is an Angolan entrepreneur, infrastructure architect, and financial systems builder. He is the Founder of Cubeshackles and Managing Member of Biu-g Holdings LLC, focused on building sovereign financial infrastructure for Africa, beginning with Angola.</p>
-
       <p>He was born and raised in Cabinda, Angola, in a middle-class household, where early exposure to the country’s telecommunications and banking sectors shaped his understanding of how financial access is structured—and where it breaks. Despite progress across Angola’s financial and telecom industries, he identified persistent infrastructure gaps in identity verification, payment visibility, and institutional coordination.</p>
-
       <p>Massanga attended Dom Paulino Madeca School, where he demonstrated early discipline and competitive focus, winning a junior tennis competition sponsored by Chevron. He later graduated from Instituto Privado Colégio Padre Builu with a concentration in Accounting and Management, forming the foundation of his analytical approach to business and finance.</p>
-
       <p>He pursued higher education in Luanda across two institutions: Universidade Lusíadas de Angola, where he studied Foreign Affairs, and Faculdade de Administração e Negócios, where he focused on Marketing and Management. During this period, he worked full-time in the service sector in Benfica, Luanda, supporting himself while continuing his academic path.</p>
-
       <p>He later relocated to the United States, where he developed a deeper understanding of labor markets, economic systems, capital formation, and entrepreneurship through direct exposure and practical experience.</p>
-
       <p>In 2021, he began actively managing his own investment portfolio, focusing on equities and options markets. In 2022, he expanded into global derivatives markets through proprietary trading environments, gaining exposure to structured capital allocation, performance-based evaluation systems, and multi-asset execution.</p>
-
       <p>By 2024, he made a deliberate decision to concentrate his activity in futures markets, prioritizing execution precision, liquidity depth, and standardized risk management. His experience in capital markets became instrumental in shaping his approach to disciplined execution, risk control, and decision-making under uncertainty.</p>
-
-      
-
       <p>His current work centers on Cubeshackles—an Angola-first financial infrastructure layer designed to enable identity-linked transactions, payment visibility, informal market digitization, and regulator-readable operating systems. The platform is being engineered to operate within Angola’s financial and regulatory architecture from inception, in alignment with institutions such as the Banco Nacional de Angola (BNA), Ministério das Finanças, Administração Geral Tributária (AGT), Agência Angolana de Regulação e Supervisão de Seguros (ARSEG), and the Comissão do Mercado de Capitais (CMC).</p>
-
       <p>His core thesis is that Africa’s financial access challenge is not solely a banking issue, but a structural infrastructure problem requiring coordinated systems across identity, compliance, payments, and public trust. Cubeshackles addresses this by building a regulator-readable, identity-anchored financial layer designed for Angola’s operational reality from inception.</p>
-
       <p>In parallel, he founded BIU.G Academy, a financial literacy and sovereign economic empowerment platform to serve Angola and the broader African continent, providing the educational foundation that complements his infrastructure work.</p>
-
-      <p>He publishes his views on LinkedIn, and his work is documented at <a href="https://cubeshackles.com" target="_blank" rel="noopener">Cubeshackles.com</a> and <a href="https://biugacademy.org" target="_blank" rel="noopener">BIUGAcademy.org</a>.</p>
-
+      <p>He publishes his views on LinkedIn, and his work is documented at <a href="https://cubeshackles.com" target="_blank" rel="noopener">Cubeshackles.com</a> and <a href="https://biu-gacademy.org" target="_blank" rel="noopener">BIUGAcademy.org</a>.</p>
       <p>His work sits at the intersection of financial infrastructure, regulatory alignment, and sovereign system design, with a focus on building identity-linked, regulator-readable platforms that integrate payments, compliance, and transaction visibility into a unified operational layer for Angola and, over time, the broader African continent.</p>
-
     </section>
-
     <aside class="bio-portrait">
-      <img src="assets/headshot.png">
+      <img src="../assets/headshot.png">
       <div class="bio-portrait-cap">Fábio G. Massanga</div>
     </aside>
   </div>
-
   <div class="disclaimer">
     <p>Many financial scams are fraudulently perpetuated in the name of legitimate companies or well-known figures. <strong>I will never ask you to send cryptocurrency or private wallet information in exchange for promised returns.</strong></p>
     <p>Any views expressed on this website are for informational purposes only and do not constitute legal, tax, investment, or financial advice.</p>
   </div>
-
   <div class="footer">
-    <a class="footer-name" href="index.html">Fábio G. Massanga</a>
+    <a class="footer-name" href="/">Fábio G. Massanga</a>
     <div class="socials">
       <a href="https://x.com/gui_massanga?s=21" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63z"/></svg></a>
       <a href="https://www.linkedin.com/in/fabiomassanga" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455zM5.337 7.433a2.062 2.062 0 110-4.124 2.062 2.062 0 010 4.124zM7.119 20.452H3.555V9h3.564z"/></svg></a>
@@ -174,7 +134,6 @@ body{font-family:'Inter',system-ui,sans-serif;background:#f5f4f1;color:#111;min-
     <div class="copy">© 2026 Copyright Fábio G. Massanga. All Rights Reserved.</div>
   </div>
 </main>
-
-<script src="site.js"></script>
+<script src="../site.js"></script>
 </body>
 </html>

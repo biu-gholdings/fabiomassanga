@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FábioArt — Portraits of Fábio G. Massanga</title>
+<title>FábioArt</title>
 <meta name="description" content="FábioArt — A living gallery of portraits and creative art of Fábio G. Massanga, Founder of Cubeshackles. These portraits are meant to be spread everywhere. Use them well.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
@@ -162,7 +162,7 @@ body{font-family:'Inter',system-ui,sans-serif;background:#000;color:#fff;min-hei
 <!-- TOPBAR -->
 <div class="topbar">
   <span class="topbar-brand">FábioArt</span>
-  <a href="images.html" class="topbar-back">Back to Images</a>
+  <a href="/images/" class="topbar-back">Back to Images</a>
 </div>
 
 <!-- LIGHTBOX -->
@@ -171,6 +171,9 @@ body{font-family:'Inter',system-ui,sans-serif;background:#000;color:#fff;min-hei
   <img id="lb-img" src="" alt="" onclick="event.stopPropagation()">
 </div>
 <script>
+if (window.location.pathname.endsWith('/FabioArt.html')) {
+  window.history.replaceState(null, '', '/FabioArt');
+}
 function openLb(src){document.getElementById('lb-img').src=src;document.getElementById('lb').classList.add('open');}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')document.getElementById('lb').classList.remove('open');});
 </script>
