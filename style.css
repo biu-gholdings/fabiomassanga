@@ -590,12 +590,17 @@ body {
 }
 
 .reg-card__badge--arseg {
-  background: linear-gradient(135deg, #1a0040, #3a0080);
+  background: #fff;
 }
 
 .reg-card__badge--arseg span {
   font-size: 9px;
   letter-spacing: .02em;
+}
+
+.reg-card__badge--arseg img {
+  object-fit: contain;
+  padding: 1px;
 }
 
 .reg-card__badge--cmc {
