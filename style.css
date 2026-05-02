@@ -592,9 +592,11 @@ body {
 .reg-card__badge--bna img,
 .reg-card__badge--agt img,
 .reg-card__badge--minfin img {
-  width: 115%;
-  height: 115%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  transform: scale(1.42);
+  transform-origin: center center;
 }
 
 .reg-card__badge--arseg {
