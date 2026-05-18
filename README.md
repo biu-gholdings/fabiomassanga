@@ -61,22 +61,33 @@ If sensitive material was ever committed, rotate credentials and remove history 
 
 ## Repository Hygiene Audit
 
-The following are **recommended to move to a private repository** (or remove from public history if they were committed in error). They are listed here for transparency; **no automatic deletion** is performed by this documentation pass.
+### Removed from this public repository
 
-| Item | Reason |
-|------|--------|
+The following internal documents were **removed from the public tree** and should be maintained only in a **private operations repository** (not published here):
+
+| Former path | Reason |
+|-------------|--------|
 | `spec/system_guarantees.md` | Internal system guarantees and economic/observability mechanics |
 | `spec/transfer_lifecycle.md` | Transfer pipeline, validation, and validator processing detail |
 | `WEDGE_LOCK.md` | Internal product wedge, success criteria, and lock conditions |
-| `docs/` (if populated) | Reserved for internal or draft documentation |
-| Any future `internal/`, `secrets/`, `credentials/`, `private-docs/`, `legal-drafts/`, `financial-models/`, `contracts/`, `cap-table/`, `investor-materials/` | Non-public operational or legal material |
+
+Historical copies may still exist in git history; use private channels if history scrubbing is required.
+
+### Do not add to this public repository
+
+| Pattern | Reason |
+|---------|--------|
+| `internal/`, `secrets/`, `credentials/`, `private-docs/`, `legal-drafts/`, `financial-models/`, `contracts/`, `cap-table/`, `investor-materials/` | Non-public operational or legal material |
+| `spec/` (operational specs), validator configs, deployment secrets | Architecture and execution detail |
 | `.env`, `*.pem`, `*.key`, certificates, logs, build artifacts | Secrets and environment-specific files (see `.gitignore`) |
 
-**Currently present in this public tree (review recommended):** `spec/`, `WEDGE_LOCK.md`, empty `docs/`.
+**Not present in this audit (good):** `internal/`, `secrets/`, `credentials/`, `private-docs/`, legal/financial/investor folders, validator configs, deployment secrets.
 
-**Not found in this audit (good):** `internal/`, `secrets/`, `credentials/`, `private-docs/`, `legal-drafts/`, `financial-models/`, `contracts/`, `cap-table/`, `investor-materials/`, validator configs, deployment secrets.
+Local-only paths (e.g. `.venv-icon/`) must remain untracked via `.gitignore`.
 
-Local-only paths (e.g. `.venv-icon/`) should remain untracked via `.gitignore`.
+### GitHub security policy
+
+[SECURITY.md](SECURITY.md) is the repository security policy. On GitHub: **Settings → Security → Policy** should reference this file (enabled automatically when `SECURITY.md` exists on the default branch).
 
 ---
 
