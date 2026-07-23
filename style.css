@@ -161,24 +161,6 @@ body {
 
 .hero-copy { max-width: 760px; position: relative; z-index: 2; }
 
-.hero-eyebrow {
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: .26em;
-  text-transform: uppercase;
-  color: var(--gold-soft);
-  margin: 0 0 22px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.hero-eyebrow::before {
-  content: "";
-  width: 36px; height: 1px;
-  background: var(--gold);
-}
-
 .hero h1 {
   margin: 0 0 26px;
   font-family: var(--serif);
