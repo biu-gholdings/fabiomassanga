@@ -3,6 +3,54 @@
   // in style.css can keep content visible when this file never loads.
   document.documentElement.classList.remove("no-js");
 
+  // Site-wide scroll reliability hardening.
+  // Keeps native page scrolling intuitive on desktop, trackpads and touch devices,
+  // while preventing stale mobile-menu state from leaving the document locked.
+  const scrollFixStyle = document.createElement("style");
+  scrollFixStyle.setAttribute("data-scroll-fix", "true");
+  scrollFixStyle.textContent = `
+    html {
+      height: auto !important;
+      min-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto !important;
+      scroll-behavior: auto !important;
+    }
+
+    body {
+      height: auto !important;
+      min-height: 100%;
+      overflow-x: hidden;
+      overflow-y: visible;
+      overscroll-behavior-y: auto;
+      touch-action: pan-y;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    @media (min-width: 821px) {
+      .sidebar {
+        overflow-y: visible !important;
+        overscroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .sidebar {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+      }
+
+      body:not(.menu-open) {
+        overflow-y: auto !important;
+      }
+    }
+  `;
+  document.head.appendChild(scrollFixStyle);
+
   const normalizedPath = window.location.pathname.replace(/\/+$/, "") || "/";
 
   const routes = {
@@ -57,6 +105,20 @@
       document.body.classList.add("menu-open");
       menuToggle.setAttribute("aria-expanded", "true");
     }
+
+    // Release any stale scroll lock restored by browser back/forward cache.
+    function releaseStaleScrollLock() {
+      if (!sidebar.classList.contains("open")) {
+        document.body.classList.remove("menu-open");
+      }
+    }
+
+    releaseStaleScrollLock();
+    window.addEventListener("pageshow", releaseStaleScrollLock);
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 820 && sidebar.classList.contains("open")) closeMenu();
+      else releaseStaleScrollLock();
+    });
 
     menuToggle.addEventListener("click", function (event) {
       event.stopPropagation();
