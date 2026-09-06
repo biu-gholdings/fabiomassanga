@@ -1,4 +1,8 @@
 (function () {
+  // Signals to CSS that scripting is alive, so the reveal-on-scroll fallback
+  // in style.css can keep content visible when this file never loads.
+  document.documentElement.classList.remove("no-js");
+
   const normalizedPath = window.location.pathname.replace(/\/+$/, "") || "/";
 
   const routes = {
@@ -6,6 +10,8 @@
     "/index.html": "home",
     "/biography": "biography",
     "/biography/index.html": "biography",
+    "/articles": "articles",
+    "/articles/index.html": "articles",
     "/media": "media",
     "/media/index.html": "media",
     "/images": "images",
@@ -14,21 +20,11 @@
     "/cubecoin/index.html": "cubecoin"
   };
 
-  const titles = {
-    home: "Fábio G. Massanga",
-    biography: "Biography",
-    media: "Media",
-    images: "Images",
-    cubecoin: "CubeCoin"
-  };
-
   const baseRoute = routes[normalizedPath] || "home";
 
   function applyState() {
     const hash = window.location.hash.replace("#", "").toLowerCase();
     const current = baseRoute === "home" && hash === "cubecoin" ? "cubecoin" : baseRoute;
-
-    document.title = titles[current] || "Fábio G. Massanga";
 
     document.querySelectorAll("[data-nav]").forEach((item) => {
       const isActive = item.dataset.nav === current;
@@ -40,6 +36,11 @@
 
   applyState();
   window.addEventListener("hashchange", applyState);
+
+  // Keep the copyright year current without a yearly edit
+  document.querySelectorAll("[data-year]").forEach(function (el) {
+    el.textContent = String(new Date().getFullYear());
+  });
 
   const menuToggle = document.querySelector(".mobile-menu");
   const sidebar = document.querySelector(".sidebar");

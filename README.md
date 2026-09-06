@@ -15,9 +15,10 @@ Live site: **https://fabiomassanga.com**
 | `/` | Home — public positioning, regulatory reference, ventures |
 | `/biography/` | Biography and institutional background |
 | `/media/` | Media, research, and public briefings |
+| `/articles/` | Articles hub — essays and published perspectives |
 | `/images/` | Public imagery and gallery entry |
 | `/cubecoin/` | Cubecoin public information page |
-| `/FabioArt` | Public art gallery |
+| `/FabioArt/` | Public art gallery |
 
 Deployment is static (HTML, CSS, JavaScript, assets). No application server, database, or production credentials belong in this repository.
 
@@ -32,7 +33,40 @@ Deployment is static (HTML, CSS, JavaScript, assets). No application server, dat
 - **Cubecoin** — public description and published articles (no operational or economic internals)  
 - **FábioArt** — creative gallery (separate public presentation)
 
-Supporting files: `index.html`, `style.css`, `site.js`, `assets/`, `CNAME` (custom domain for GitHub Pages).
+Supporting files: `index.html`, `style.css`, `site.js`, `assets/`, `CNAME` (custom domain for GitHub Pages),
+`robots.txt`, `sitemap.xml`, `site.webmanifest`, `404.html`, `.nojekyll`.
+
+### Assets
+
+| Path | Contents |
+|------|----------|
+| `assets/` | Source images (full resolution, master copies) |
+| `assets/opt/` | Optimized WebP actually served to browsers |
+| `assets/og/` | Branded 1200×630 Open Graph cards for link previews |
+| `assets/favicon-*.png`, `assets/apple-touch-icon.png` | Site icons referenced by every page |
+
+**Pages reference `assets/opt/` and `assets/og/` — never the originals in `assets/` directly.**
+The originals are kept only as masters for regenerating those two directories.
+
+Regenerate the social cards after changing a photograph or headline:
+
+```sh
+python3 tools/make-og-cards.py
+```
+
+To add an optimized image, use the same settings the existing ones were built with:
+
+```sh
+cwebp -q 82 -resize <display-width-x2> 0 -m 6 assets/source.png -o assets/opt/name.webp   # photographs
+cwebp -q 90 -alpha_q 100 -resize <width> 0 -m 6 assets/logo.png -o assets/opt/logo.webp   # logos & icons
+```
+
+### Conventions
+
+- Every page ships a unique `<title>`, `meta description`, canonical URL, Open Graph + Twitter card, and JSON-LD.
+- The `Person` schema on `/` (`#person`) is the identity anchor; other pages reference it rather than redefining it.
+- New pages must be added to `sitemap.xml` and to the sidebar nav on **every** page.
+- Content images carry `width`, `height`, and `loading="lazy"` (except above-the-fold hero images).
 
 ---
 
@@ -94,7 +128,8 @@ Local-only paths (e.g. `.venv-icon/`) must remain untracked via `.gitignore`.
 ## What Remains Public (by design)
 
 - Static website source (`*.html`, `style.css`, `site.js`)  
-- Public images and logos under `assets/`  
+- Public images and logos under `assets/` (with `assets/opt/` and `assets/og/` derivatives)  
+- Build helper `tools/make-og-cards.py` (regenerates social preview cards)  
 - Domain configuration (`CNAME`)  
 - This README, `SECURITY.md`, `CONTRIBUTING.md`, and `.gitignore`  
 

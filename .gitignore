@@ -89,7 +89,14 @@ validator-configs/
 *cap_table*
 *investor-deck*
 *term-sheet*
-*nda*
+# NDAs — matched as a word, not as any three letters inside a filename.
+# The previous `*nda*` silently excluded every "Luanda" asset from the repo.
+nda.*
+NDA.*
+*[-_.]nda[-_.]*
+*[-_.]NDA[-_.]*
+*[-_.]nda.*
+*[-_.]NDA.*
 *legal-draft*
 
 # Archives (local bundles only; do not commit)
